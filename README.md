@@ -29,3 +29,8 @@ No build command or package installation is required. GitHub Pages serves this s
 - [RepoRadar live demo](https://damnsunnyy.github.io/RepoRadar/)
 - [SiteSentry live demo](https://damnsunnyy.github.io/SiteSentry/)
 - [ModelBench live demo](https://damnsunnyy.github.io/ModelBench/)
+
+## More projects
+
+- [Echo](https://github.com/damnsunnyy/Echo) — local-first voice assistant with an Ollama loop and React dashboard.
+- [RoadTrip](https://github.com/damnsunnyy/RoadTrip) — SwiftUI motorcycle group ride prototype with Firestore and MapKit.
