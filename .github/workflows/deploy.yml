@@ -34,7 +34,7 @@ jobs:
           npm ci --prefix job-hunt
           npm run build --prefix job-hunt
       - name: Remove build dependencies from Pages artifact
-        run: node -e "require('node:fs').rmSync('job-hunt/node_modules', {recursive: true, force: true})"
+        run: rm -rf job-hunt/node_modules
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site
