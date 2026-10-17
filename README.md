@@ -25,11 +25,12 @@ Edit `index.html` to change the name, bio, repository descriptions, timeline, an
 2. In the repository, open **Settings → Pages** and choose **GitHub Actions** as the build and deployment source.
 3. The workflow in `.github/workflows/deploy.yml` deploys the site on every push to `main`. The Pages URL appears in the Actions run and in Settings → Pages.
 
-No build command or package installation is required. GitHub Pages serves this static site directly.
+GitHub Pages serves the portfolio as a static site. Its Actions workflow also builds the Apply Desk bundle before publishing.
 
 ## Job search workspace
 
-Open the [Apply Desk](job-hunt/) to save roles, compare recognized requirements against your stated profile, prepare a role-focused resume, and track application stages and follow-ups. Records stay in browser storage. Its keyword coverage is not an ATS score or hiring guarantee. The optional [Chrome helper](browser-helper/README.md) can capture a listing, log an open email, and fill clearly matched profile fields; it never submits an application.
+Open the [Apply Desk](job-hunt/) to create an account, search live roles, compare recognized requirements against your profile, prepare a role-focused résumé, and track applications and shortlist/interview signals. Each account's rows are isolated with database row-level security. The page first shows the backend setup guide until a Supabase project is connected. The guide includes the database migration, job-search function, and Gmail connection steps. The optional [Chrome helper](browser-helper/README.md) can capture pages, log an open email, and fill clear profile fields; it never submits applications.
+
 - [RepoRadar live demo](https://damnsunnyy.github.io/RepoRadar/)
 - [SiteSentry live demo](https://damnsunnyy.github.io/SiteSentry/)
 - [ModelBench live demo](https://damnsunnyy.github.io/ModelBench/)
