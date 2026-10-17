@@ -1,0 +1,3 @@
+const defaults={name:'Shubham Meghani',email:'shubham.meghani.work@gmail.com',phone:'6265280847',location:'Pune, India',linkedin:'https://linkedin.com/in/shubham-meghani/',website:'https://damnsunnyy.github.io/Portfolio/'};
+chrome.storage.local.get('profile',({profile})=>{const p={...defaults,...profile};for(const [k,v] of Object.entries(p)){const el=document.querySelector(`[name="${k}"]`);if(el)el.value=v;}});
+document.querySelector('#profile-form').addEventListener('submit',async e=>{e.preventDefault();const p=Object.fromEntries(new FormData(e.currentTarget));await chrome.storage.local.set({profile:p});document.querySelector('#saved').textContent='Saved locally.';});

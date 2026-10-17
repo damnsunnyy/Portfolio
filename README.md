@@ -26,6 +26,10 @@ Edit `index.html` to change the name, bio, repository descriptions, timeline, an
 3. The workflow in `.github/workflows/deploy.yml` deploys the site on every push to `main`. The Pages URL appears in the Actions run and in Settings → Pages.
 
 No build command or package installation is required. GitHub Pages serves this static site directly.
+
+## Job search workspace
+
+Open the [Apply Desk](job-hunt/) to save roles, compare recognized requirements against your stated profile, prepare a role-focused resume, and track application stages and follow-ups. Records stay in browser storage. Its keyword coverage is not an ATS score or hiring guarantee. The optional [Chrome helper](browser-helper/README.md) can capture a listing, log an open email, and fill clearly matched profile fields; it never submits an application.
 - [RepoRadar live demo](https://damnsunnyy.github.io/RepoRadar/)
 - [SiteSentry live demo](https://damnsunnyy.github.io/SiteSentry/)
 - [ModelBench live demo](https://damnsunnyy.github.io/ModelBench/)
@@ -46,6 +50,6 @@ The public portfolio includes [Shubham Meghani’s updated one-page resume PDF](
 ## Contact
 
 - [LinkedIn](https://linkedin.com/in/shubham-meghani/)
-- [Email](mailto:shubham.meghani95@gmail.com)
+- [Email](mailto:shubham.meghani.work@gmail.com)
 - [HTML DOM Visualizer](https://damnsunnyy.github.io/HTML-DOM-Visualizer/) — live custom parser and interactive tree explorer.
 - [Student Management System](https://github.com/damnsunnyy/StudentManagementSystem) — source and local setup; requires a MongoDB-backed API.

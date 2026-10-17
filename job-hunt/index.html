@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#10110f" />
+  <meta name="description" content="Private job search workspace for finding, matching, and tracking applications." />
+  <title>Apply Desk — Shubham Meghani</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="../">SM<span> / APPLY DESK</span></a><span class="privacy"><i></i> PRIVATE TO THIS BROWSER</span></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">JOB SEARCH WORKSPACE · 01</p><h1>Make the search<br /><em>move forward.</em></h1><p class="lede">Save a job, see how it matches your verified experience, prepare a tailored resume, and keep every application in one place.</p></div><aside class="summary" aria-live="polite"><span>APPLICATIONS</span><b id="total-count">0</b><small id="summary-note">Saved on this device only</small></aside></section>
+
+    <section class="searches card"><div class="section-head"><div><p class="eyebrow">DISCOVER</p><h2>Start with relevant searches</h2></div><span class="muted">Pune · Remote India</span></div><div class="search-links" id="search-links"></div><p class="hint">Search links open job boards. Save a promising listing below; the browser helper can capture its details and fill known fields.</p></section>
+
+    <section class="workspace">
+      <div class="card add-card"><div class="section-head"><div><p class="eyebrow">NEW OPPORTUNITY</p><h2>Bring a job into your desk</h2></div><span class="step">01 / 03</span></div>
+        <form id="job-form"><label for="job-url">Job posting URL</label><div class="url-row"><input id="job-url" type="url" placeholder="https://company.com/careers/role" /><button class="button quiet" id="capture-button" type="button" title="Capture an open job tab using the extension">Capture tab</button></div>
+          <label for="job-text">Paste the job description or captured page text</label><textarea id="job-text" rows="8" placeholder="Paste the full job description here. Your text stays in this browser."></textarea>
+          <div class="form-grid"><div><label for="job-company">Company</label><input id="job-company" placeholder="Company name" /></div><div><label for="job-title">Role title</label><input id="job-title" placeholder="Role title" /></div><div><label for="job-location">Location</label><input id="job-location" placeholder="Location / remote" /></div></div>
+          <div class="form-foot"><p id="form-message" aria-live="polite">Paste a description to calculate a skills match.</p><button class="button primary" type="submit">Analyze &amp; save <span>↗</span></button></div>
+        </form>
+      </div>
+      <aside class="card profile-card"><p class="eyebrow">YOUR VERIFIED PROFILE</p><h2>What matching uses</h2><p>Only details already in your resume: MCA candidate, Poho web design internship, client-oriented web delivery, coordination, documentation, and your listed technical skills.</p><div class="profile-chips"><span>Project coordination</span><span>Requirement analysis</span><span>Web delivery</span><span>QA</span><span>Documentation</span><span>Python</span><span>JavaScript</span><span>SQL</span><span>React</span><span>SwiftUI</span></div><details><summary>What the match score means</summary><p>It is a keyword coverage estimate from the pasted text and your stated profile, not a hiring probability or an ATS score. It cannot guarantee a 100% score or invent qualifications.</p></details></aside>
+    </section>
+
+    <section class="card pipeline"><div class="section-head"><div><p class="eyebrow">YOUR PIPELINE</p><h2>Saved applications</h2></div><div class="toolbar"><select id="status-filter" aria-label="Filter applications"><option value="all">All statuses</option><option>Interested</option><option>Applied</option><option>Interview</option><option>Offer</option><option>Rejected</option><option>Archived</option></select><button class="button quiet" id="export-button" type="button">Export CSV</button></div></div><div id="job-list" class="job-list"></div><div id="empty-state" class="empty"><span>✳</span><h3>Your next move starts here.</h3><p>Add a role above or capture a job page with the browser helper.</p></div></section>
+
+    <section class="card mail-card"><div class="section-head"><div><p class="eyebrow">EMAIL SIGNALS</p><h2>Replies linked to applications</h2></div><span class="muted">Capture an open message with the helper</span></div><div id="mail-list"></div><div id="mail-empty" class="empty"><span>✉</span><h3>No job emails captured yet.</h3><p>Open a message in Gmail, click the extension, and choose “Log this email”.</p></div><p class="hint">The helper only reads a message after you click. Automatic inbox sync is unavailable because Gmail access is disabled for this workspace. Email contents you capture stay in this browser.</p></section>
+
+    <section class="card automation"><div><p class="eyebrow">BROWSER HELPER</p><h2>Fill the repeatable parts</h2><p>The optional Chrome extension fills fields it can identify with confidence—name, email, phone, location, LinkedIn, and portfolio. It leaves custom, legal, demographic, salary, and work-authorization questions for you. It never submits an application.</p></div><a class="button quiet" href="../browser-helper/README.md">Install instructions ↗</a></section>
+    <p class="footnote">Your records stay in local browser storage. Export a CSV backup regularly. Gmail syncing needs a private Google OAuth setup and is not enabled on this public static site.</p>
+  </main>
+  <template id="job-template"><article class="job"><div class="job-main"><div class="job-title-row"><h3></h3><span class="match-pill"></span></div><p class="company-line"></p><a class="job-url" target="_blank" rel="noreferrer"></a><div class="skill-row"></div><p class="match-note"></p><div class="job-actions"><button class="text-button resume-button" type="button">Prepare tailored resume</button><button class="text-button copy-button" type="button">Copy application summary</button><button class="text-button delete-button" type="button">Remove</button></div></div><div class="job-side"><label>Status<select class="job-status"><option>Interested</option><option>Applied</option><option>Interview</option><option>Offer</option><option>Rejected</option><option>Archived</option></select></label><label>Applied on<input class="applied-date" type="date" /></label><label>Follow up<input class="follow-date" type="date" /></label><label>Notes<textarea class="job-notes" rows="2" placeholder="Contact, next step, email note…"></textarea></label></div></article></template>
+  <script src="app.js" defer></script>
+</body>
+</html>
