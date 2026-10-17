@@ -35,23 +35,60 @@
   }, { threshold: .12 });
   document.querySelectorAll('.project-card,.principle,.manifesto-main,.contact h2').forEach((el) => reveal.observe(el));
 
-  // Category filters, tactile card tilt, and depth-shifted art all respond directly to the pointer.
+  // Category and technology filters stay in sync across the stack and project grid.
   const filters = [...document.querySelectorAll('.filter-button')];
+  const techFilters = [...document.querySelectorAll('.stack-card')];
   const cards = [...document.querySelectorAll('.project-card')];
   const grid = document.querySelector('.project-grid');
-  filters.forEach((button) => button.addEventListener('click', () => {
+  let activeCategory = 'all';
+  let activeTech = '';
+  const applyFilters = () => {
     filters.forEach((item) => {
-      const active = item === button;
+      const active = item.dataset.filter === activeCategory;
       item.classList.toggle('is-active', active);
       item.setAttribute('aria-pressed', String(active));
     });
-    grid.classList.toggle('is-filtered', button.dataset.filter !== 'all');
+    techFilters.forEach((item) => item.setAttribute('aria-pressed', String(item.dataset.tech === activeTech)));
+    grid.classList.toggle('is-filtered', activeCategory !== 'all' || Boolean(activeTech));
     cards.forEach((card) => {
-      const visible = button.dataset.filter === 'all' || card.dataset.category === button.dataset.filter;
+      const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
+      const matchesTech = !activeTech || (card.dataset.techs || '').split(',').includes(activeTech);
+      const visible = matchesCategory && matchesTech;
       card.hidden = !visible;
       card.classList.toggle('in-view', visible);
     });
+  };
+  filters.forEach((button) => button.addEventListener('click', () => {
+    activeCategory = button.dataset.filter;
+    activeTech = '';
+    applyFilters();
   }));
+  techFilters.forEach((button) => button.addEventListener('click', () => {
+    activeTech = activeTech === button.dataset.tech ? '' : button.dataset.tech;
+    activeCategory = 'all';
+    applyFilters();
+  }));
+  window.addEventListener('portfolio-filter-tech', (event) => {
+    const tech = event.detail?.tech;
+    if (!techFilters.some((button) => button.dataset.tech === tech)) return;
+    activeTech = tech;
+    activeCategory = 'all';
+    applyFilters();
+    document.querySelector('#work').scrollIntoView({ behavior: reduceMotion ? 'instant' : 'smooth', block: 'start' });
+  });
+
+  const themeToggle = document.querySelector('#theme-toggle');
+  const setTheme = (light) => {
+    document.body.classList.toggle('light-theme', light);
+    themeToggle.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
+    themeToggle.textContent = light ? '☾' : '☼';
+  };
+  try { setTheme(localStorage.getItem('portfolio-theme') === 'light'); } catch { setTheme(false); }
+  themeToggle?.addEventListener('click', () => {
+    const light = !document.body.classList.contains('light-theme');
+    setTheme(light);
+    try { localStorage.setItem('portfolio-theme', light ? 'light' : 'dark'); } catch { /* theme still works for this visit */ }
+  });
   cards.forEach((card) => {
     const visual = card.querySelector('.project-visual');
     card.addEventListener('pointermove', (event) => {

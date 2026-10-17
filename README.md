@@ -1,10 +1,10 @@
 # Shubham — personal portfolio
 
-A responsive portfolio for Shubham with an animated Three.js sculpture, an interactive opening sequence, custom cursor, draggable 3D object, scroll progress, project filters, and pointer-reactive project cards. The featured projects and repository links are drawn from the public `damnsunnyy` GitHub profile. Three.js loads as an ES module from jsDelivr.
+A responsive portfolio for Shubham, inspired by expressive developer portfolios and personalized with projects from the public `damnsunnyy` GitHub profile. It features a starfield, an interactive Three.js keyboard whose keys filter projects, a selectable tech stack, GitHub project timeline, dark/light themes, an animated opening sequence, scroll progress, and tactile project previews. Three.js and the typefaces load from external CDNs.
 
 ## Personalize it
 
-Edit `index.html` to change the name, bio, repository descriptions, or contact links. Update the page title, description, and social preview metadata in the document head as well. Colors, layout, and typography are in `styles.css`; the 3D object and interaction behavior are in `scene.js` and `script.js`.
+Edit `index.html` to change the name, bio, repository descriptions, timeline, and contact links. Update the page title, description, and social preview metadata in the document head as well. Colors, layout, and typography are in `styles.css` and the inline page styles; the 3D keyboard lives in `scene.js`, with interactions in `script.js`.
 
 ## Featured repositories
 
@@ -21,4 +21,4 @@ Edit `index.html` to change the name, bio, repository descriptions, or contact l
 2. In the repository, open **Settings → Pages** and choose **GitHub Actions** as the build and deployment source.
 3. The workflow in `.github/workflows/deploy.yml` deploys the site on every push to `main`. The Pages URL appears in the Actions run and in Settings → Pages.
 
-No build command or package installation is required. The 3D centerpiece and Geist/DM Mono fonts load from external CDNs; the page layout and remaining effects are self-contained.
+No build command or package installation is required. GitHub Pages serves this static site directly.
