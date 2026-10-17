@@ -34,3 +34,14 @@ No build command or package installation is required. GitHub Pages serves this s
 
 - [Echo](https://github.com/damnsunnyy/Echo) — local-first voice assistant with an Ollama loop and React dashboard.
 - [RoadTrip](https://github.com/damnsunnyy/RoadTrip) — SwiftUI motorcycle group ride prototype with Firestore and MapKit.
+
+## Resume
+
+The public portfolio includes [Shubham Meghani’s resume PDF](assets/Shubham-Meghani-Resume.pdf).
+
+## Contact
+
+- [LinkedIn](https://linkedin.com/in/shubham-meghani/)
+- [Email](mailto:shubham.meghani95@gmail.com)
+- [HTML DOM Visualizer](https://damnsunnyy.github.io/HTML-DOM-Visualizer/) — live custom parser and interactive tree explorer.
+- [Student Management System](https://github.com/damnsunnyy/StudentManagementSystem) — source and local setup; requires a MongoDB-backed API.
