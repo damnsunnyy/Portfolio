@@ -26,3 +26,6 @@ Edit `index.html` to change the name, bio, repository descriptions, timeline, an
 3. The workflow in `.github/workflows/deploy.yml` deploys the site on every push to `main`. The Pages URL appears in the Actions run and in Settings → Pages.
 
 No build command or package installation is required. GitHub Pages serves this static site directly.
+- [RepoRadar live demo](https://damnsunnyy.github.io/RepoRadar/)
+- [SiteSentry live demo](https://damnsunnyy.github.io/SiteSentry/)
+- [ModelBench live demo](https://damnsunnyy.github.io/ModelBench/)
