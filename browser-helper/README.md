@@ -1,6 +1,6 @@
 # Apply Desk browser helper
 
-This optional Chrome Manifest V3 extension captures visible job-page text into the Apply Desk, logs an open email you explicitly choose, and fills blank form fields it can confidently identify from your local profile. It asks for access only to the active tab after you click a button. It does not run in the background, poll your inbox, upload data, or submit applications.
+This optional Chrome Manifest V3 extension captures visible job-page text into the Apply Desk, logs an open email you explicitly choose, and fills blank form fields it can confidently identify from your local profile. It asks for access only to the active tab after you click a button. Profile details remain in this browser's extension storage.
 
 The live Apply Desk first needs the Supabase connection described in [its setup guide](../job-hunt/setup/). Each friend signs up in their own account; the browser helper profile is configured per device.
 
@@ -11,9 +11,10 @@ The live Apply Desk first needs the Supabase connection described in [its setup 
 3. Open the extension’s **Details → Extension options** and check your contact details.
 4. On a job page, click the extension and choose **Capture this job**. Sign in if asked, review the captured role/company/description, then save it to your account.
 5. In Gmail, open a job-related message and choose **Log this email** to add a reply signal to the tracker. This is an on-demand capture; inbox-wide sync is not enabled.
-6. On an application form, choose **Fill known fields**, review every value, attach the tailored resume yourself, and submit only after checking the entire application.
+6. On an application form, choose **Fill application**. By default, it fills recognized fields and leaves submission to you.
+7. To enable opt-in submission, open **Edit profile**, enable auto-submit, and list exact approved hostnames (for example, `jobs.example.com`). On those hosts, the helper clicks a clearly labeled submit button only when it has filled at least one known field and all required fields are complete. You still start each application by clicking the extension.
 
-The extension deliberately leaves custom questions unanswered and never clicks Submit. Job application websites use different form structures and may ask for legally significant or sensitive information that cannot safely be inferred from a resume.
+The helper blocks auto-submit when required answers are missing or it detects questions about work authorization, sponsorship, salary, demographics, legal declarations, assessments, or consent. It cannot attach a resume or reliably handle every dynamic application flow. Check the site for a receipt after it submits; the helper cannot guarantee that a third-party site accepted the application. Review the host allowlist and your saved details before enabling this feature.
 
 ## Privacy and limitations
 
