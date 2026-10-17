@@ -29,7 +29,7 @@ GitHub Pages serves the portfolio as a static site. Its Actions workflow also bu
 
 ## Job search workspace
 
-Open the [Apply Desk](job-hunt/) to create an account, search live roles, compare recognized requirements against your profile, prepare a role-focused résumé, and track applications and shortlist/interview signals. Each account's rows are isolated with database row-level security. The page first shows the backend setup guide until a Supabase project is connected. The guide includes the database migration, job-search function, and Gmail connection steps. The optional [Chrome helper](browser-helper/README.md) can capture pages, log an open email, and fill clear profile fields; it never submits applications.
+Open the standalone [Apply Desk live app](https://damnsunnyy.github.io/ApplyDesk/) or browse its [GitHub repository](https://github.com/damnsunnyy/ApplyDesk). It helps users search roles, prepare a role-focused résumé, and track applications and shortlist/interview signals. Each account's rows are isolated with database row-level security. The optional [Chrome helper](browser-helper/README.md) can capture pages, log an open email, and fill clear profile fields; it never submits applications.
 
 - [RepoRadar live demo](https://damnsunnyy.github.io/RepoRadar/)
 - [SiteSentry live demo](https://damnsunnyy.github.io/SiteSentry/)
