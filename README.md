@@ -15,6 +15,9 @@ Edit `index.html` to change the name, bio, repository descriptions, timeline, an
 - `google-docs-clone` — DocsFlow real-time collaborative editor
 - `resume_ats` — Java resume screening and candidate ranking
 - [InsightX](https://github.com/Shubham01-shubh/InsightX) — collaborator project: React and Django REST CSV analytics studio
+- `RepoRadar` — live GitHub profile and repository explorer
+- `SiteSentry` — robots-aware website quality scanner with portable reports
+- `ModelBench` — leakage-safe, local-first tabular model benchmark
 
 ## Publish on GitHub Pages
 
