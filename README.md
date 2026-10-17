@@ -1,10 +1,10 @@
 # Shubham — personal portfolio
 
-A responsive portfolio for Shubham, inspired by expressive developer portfolios and personalized with projects from the public `damnsunnyy` GitHub profile. It features a starfield, an interactive Three.js keyboard whose keys filter projects, a selectable tech stack, GitHub project timeline, dark/light themes, an animated opening sequence, scroll progress, and tactile project previews. Three.js and the typefaces load from external CDNs.
+A responsive portfolio for Shubham, personalized with projects from the public `damnsunnyy` GitHub profile. It features a starfield, an interactive Three.js keyboard whose keys filter projects, genuine technology logos, a selectable tech stack, a GitHub project timeline, dark/light themes, an animated opening sequence, scroll progress, and live screenshots from deployed project interfaces. Three.js and the typefaces load from external CDNs; the technology logos are stored locally.
 
 ## Personalize it
 
-Edit `index.html` to change the name, bio, repository descriptions, timeline, and contact links. Update the page title, description, and social preview metadata in the document head as well. Colors, layout, and typography are in `styles.css` and the inline page styles; the 3D keyboard lives in `scene.js`, with interactions in `script.js`.
+Edit `index.html` to change the name, bio, repository descriptions, timeline, and contact links. Update the page title, description, and social preview metadata in the document head as well. Colors, layout, and typography are in `styles.css`, `project-captures.css`, and the page's inline responsive styles; the 3D keyboard lives in `scene.js`, with interactions in `script.js`.
 
 ## Featured repositories
 
@@ -37,7 +37,11 @@ No build command or package installation is required. GitHub Pages serves this s
 
 ## Resume
 
-The public portfolio includes [Shubham Meghani’s resume PDF](assets/Shubham-Meghani-Resume.pdf).
+The public portfolio includes [Shubham Meghani’s updated one-page resume PDF](assets/Shubham-Meghani-Resume-2026.pdf), with a matching [HTML source](assets/resume-source.html).
+
+## Project imagery
+
+`assets/project-captures/` contains reduced-size captures of the live RepoRadar, SiteSentry, HTML DOM Visualizer, and ModelBench interfaces, plus the Echo dashboard and Stanford Dogs held-out recall figure. The portfolio labels previews and research figures to distinguish them from one another. The RoadTrip card describes its documented prototype flow without presenting sample rider locations as live data.
 
 ## Contact
 

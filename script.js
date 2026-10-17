@@ -76,6 +76,11 @@
     applyFilters();
     document.querySelector('#work').scrollIntoView({ behavior: reduceMotion ? 'instant' : 'smooth', block: 'start' });
   });
+  window.addEventListener('portfolio-clear-filters', () => {
+    activeTech = '';
+    activeCategory = 'all';
+    applyFilters();
+  });
 
   const themeToggle = document.querySelector('#theme-toggle');
   const setTheme = (light) => {

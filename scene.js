@@ -25,9 +25,9 @@ keyboard.add(trim);
 
 const colors = [0xffa15e, 0x69d9f5, 0xb593f9, 0x9cdb79, 0xf07879, 0x6f9df5, 0xf2d36e];
 const techs = [
-  ['Py','python','Python · machine learning'],['PT','pytorch','PyTorch · computer vision'],['JS','javascript','JavaScript · interactive apps'],['Re','react','React · streaming and collaboration'],['Dj','django','Django · full-stack web'],['J','java','Java · resume matching'],['Sp','spring','Spring · backend services'],
-  ['AI','python','Python · applied AI'],['<>','javascript','JavaScript · the web'],['DB','mongodb','MongoDB · document storage'],['SQL','sqlite','SQLite · lightweight data'],['Ex','express','Express · web APIs'],['↔','socketio','Socket.IO · real-time sync'],['ND','node','Node.js · server-side JavaScript'],
-  ['HT','javascript','Web technologies · front end'],['CSS','javascript','Web technologies · styling'],['ML','pytorch','PyTorch · model training'],['API','django','Django · REST APIs'],['DOC','socketio','Socket.IO · DocsFlow collaboration'],['CV','pytorch','Computer vision · 120 breeds'],['ATS','java','Java · applicant tracking']
+  ['Py','python','Python · machine learning','python'],['PT','pytorch','PyTorch · computer vision','pytorch'],['JS','javascript','JavaScript · interactive apps','javascript'],['Re','react','React · streaming and collaboration','react'],['Dj','django','Django · full-stack web','django'],['J','java','Java · resume matching','openjdk'],['Sp','spring','Spring · backend services','spring'],
+  ['AI','python','Python · applied AI','python'],['<>','javascript','JavaScript · the web','javascript'],['DB','mongodb','MongoDB · document storage','mongodb'],['SQL','sqlite','SQLite · lightweight data','sqlite'],['Ex','express','Express · web APIs','express'],['↔','socketio','Socket.IO · real-time sync','socketdotio'],['ND','node','Node.js · server-side JavaScript','nodedotjs'],
+  ['HT','html','HTML · accessible page structure','html5'],['CSS','css','CSS · responsive interface styling','css'],['ML','pytorch','PyTorch · model training','pytorch'],['API','fastapi','FastAPI · local event API','fastapi'],['DOC','socketio','Socket.IO · DocsFlow collaboration','socketdotio'],['CV','pytorch','Computer vision · 120 breeds','pytorch'],['ATS','java','Java · applicant tracking','openjdk']
 ];
 const keyGeometry = new THREE.BoxGeometry(.65, .19, .62);
 const labelGeometry = new THREE.PlaneGeometry(.48, .32);
@@ -36,7 +36,7 @@ const keyRows = [7,7,7];
 let item = 0;
 for (let row = 0; row < keyRows.length; row++) {
   for (let col = 0; col < keyRows[row]; col++) {
-    const [label, tech, title] = techs[item];
+    const [label, tech, title, icon] = techs[item];
     const material = new THREE.MeshPhysicalMaterial({ color: colors[(item * 3 + row) % colors.length], metalness: .28, roughness: .24, clearcoat: .82, clearcoatRoughness: .18, emissive: 0x000000 });
     const key = new THREE.Mesh(keyGeometry, material);
     key.position.set((col - 3) * .76, .11, (row - 1) * .72);
@@ -47,11 +47,31 @@ for (let row = 0; row < keyRows.length; row++) {
     const ctx = textureCanvas.getContext('2d');
     ctx.clearRect(0, 0, 192, 128);
     ctx.fillStyle = 'rgba(8,12,20,.78)';
-    ctx.beginPath(); ctx.roundRect(10, 18, 172, 92, 18); ctx.fill();
-    ctx.fillStyle = '#fff'; ctx.font = `700 ${label.length > 3 ? 35 : 48}px Arial`;
-    ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(label, 96, 64);
+    ctx.beginPath(); ctx.roundRect(10, 9, 172, 110, 18); ctx.fill();
     const texture = new THREE.CanvasTexture(textureCanvas);
     texture.colorSpace = THREE.SRGBColorSpace;
+    // Use locally stored Simple Icons marks so the keycaps show real tech logos,
+    // even when a visitor's network blocks a third-party icon CDN.
+    const logo = new Image();
+    logo.onload = () => {
+      const size = 76;
+      ctx.drawImage(logo, (192 - size) / 2, 17, size, size);
+      ctx.fillStyle = '#e9edf5';
+      ctx.font = '500 13px Arial';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(label, 96, 105, 150);
+      texture.needsUpdate = true;
+    };
+    logo.onerror = () => {
+      ctx.fillStyle = '#e9edf5';
+      ctx.font = `700 ${label.length > 3 ? 30 : 44}px Arial`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(label, 96, 64, 150);
+      texture.needsUpdate = true;
+    };
+    logo.src = new URL(`assets/tech-icons/${icon}.svg`, document.baseURI).href;
     const mark = new THREE.Mesh(labelGeometry, new THREE.MeshBasicMaterial({ map: texture, transparent: true, depthWrite: false }));
     mark.position.set(key.position.x, .211, key.position.z);
     mark.rotation.x = -Math.PI / 2;
@@ -87,6 +107,30 @@ function showKey(key) {
   if (key) { key.scale.set(1.08,1.2,1.08); key.material.emissive.setHex(0x343434); host.classList.add('key-active'); document.querySelector('#keyboard-toast').textContent=key.userData.title.toUpperCase(); }
   else { host.classList.remove('key-active'); }
 }
+let focusedKeyIndex = -1;
+const selectKey = (key) => {
+  if (!key) return;
+  showKey(key);
+  window.dispatchEvent(new CustomEvent('portfolio-filter-tech', { detail: { tech: key.userData.tech } }));
+};
+host.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    focusedKeyIndex = -1;
+    showKey(null);
+    window.dispatchEvent(new Event('portfolio-clear-filters'));
+    return;
+  }
+  if (!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Enter',' '].includes(event.key)) return;
+  event.preventDefault();
+  if (event.key === 'Enter' || event.key === ' ') {
+    selectKey(keyMeshes[Math.max(focusedKeyIndex, 0)]);
+    return;
+  }
+  const step = event.key === 'ArrowLeft' || event.key === 'ArrowUp' ? -1 : 1;
+  focusedKeyIndex = (focusedKeyIndex + step + keyMeshes.length) % keyMeshes.length;
+  showKey(keyMeshes[focusedKeyIndex]);
+});
+host.addEventListener('blur', () => showKey(null));
 host.addEventListener('pointermove',event=>{
   const rect=host.getBoundingClientRect(); aimX=((event.clientX-rect.left)/rect.width-.5)*.65; aimY=((event.clientY-rect.top)/rect.height-.5)*.4;
   if (dragging) { manualX+=(event.clientX-lastX)*.007; manualY+=(event.clientY-lastY)*.007; lastX=event.clientX; lastY=event.clientY; }
@@ -94,7 +138,7 @@ host.addEventListener('pointermove',event=>{
 },{passive:true});
 host.addEventListener('pointerleave',()=>{aimX=0;aimY=0;showKey(null);},{passive:true});
 host.addEventListener('pointerdown',event=>{dragging=true;lastX=event.clientX;lastY=event.clientY;downX=event.clientX;downY=event.clientY;host.setPointerCapture?.(event.pointerId);});
-host.addEventListener('pointerup',event=>{dragging=false;if(Math.hypot(event.clientX-downX,event.clientY-downY)<8){const key=hitKey(event);if(key){showKey(key);window.dispatchEvent(new CustomEvent('portfolio-filter-tech',{detail:{tech:key.userData.tech}}));}}});
+host.addEventListener('pointerup',event=>{dragging=false;if(Math.hypot(event.clientX-downX,event.clientY-downY)<8)selectKey(hitKey(event));});
 host.addEventListener('pointercancel',()=>{dragging=false;});
 window.addEventListener('scene-motion',event=>{motionPaused=Boolean(event.detail?.paused);});
 function resize(){const rect=host.getBoundingClientRect();renderer.setSize(rect.width,rect.height,false);camera.aspect=rect.width/rect.height;camera.position.z=innerWidth<600?9.8:8.6;camera.updateProjectionMatrix();keyboard.scale.setScalar(innerWidth<600?.82:1);}
