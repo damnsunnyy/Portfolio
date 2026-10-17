@@ -14,6 +14,7 @@ Edit `index.html` to change the name, bio, repository descriptions, timeline, an
 - `amazon-prime-video-clone` — Django streaming application
 - `google-docs-clone` — DocsFlow real-time collaborative editor
 - `resume_ats` — Java resume screening and candidate ranking
+- [InsightX](https://github.com/Shubham01-shubh/InsightX) — collaborator project: React and Django REST CSV analytics studio
 
 ## Publish on GitHub Pages
 
