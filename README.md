@@ -1,10 +1,10 @@
 # Shubham — personal portfolio
 
-A responsive portfolio for Shubham, curated from the public `damnsunnyy` GitHub profile and spanning full-stack applications, applied machine learning, AI prototypes, iOS, and developer tools. It features a starfield, an interactive Three.js keyboard whose keys filter projects, genuine technology logos, a selectable tech stack, a GitHub project timeline, dark/light themes, an animated opening sequence, scroll progress, and live screenshots from deployed project interfaces. Three.js and the typefaces load from external CDNs; the technology logos are stored locally.
+A responsive portfolio for Shubham, curated from the public `damnsunnyy` GitHub profile and spanning full-stack applications, applied machine learning, AI prototypes, iOS, and developer tools. Its warm editorial design opens directly to a featured project, with a selectable tech stack, a GitHub project timeline, project-strength rankings, scroll progress, and live screenshots from deployed project interfaces. Typefaces load from Google Fonts; technology logos are stored locally.
 
 ## Personalize it
 
-Edit `index.html` to change the name, bio, repository descriptions, timeline, and contact links. Update the page title, description, and social preview metadata in the document head as well. Colors, layout, and typography are in `styles.css`, `project-captures.css`, and the page's inline responsive styles; the 3D keyboard lives in `scene.js`, with interactions in `script.js`.
+Edit `index.html` to change the name, bio, repository descriptions, timeline, and contact links. Update the page title, description, and social preview metadata in the document head as well. Colors and layout are in `portfolio-refresh.css`, `styles.css`, and `project-captures.css`; page interactions live in `script.js`.
 
 ## Featured repositories
 

@@ -142,16 +142,10 @@
       @media (max-width: 560px) { .intro-screen { padding: 24px 7%; }.intro-top,.intro-bottom { font-size:7px; }.intro-bottom span:last-child { max-width:120px; text-align:right; line-height:1.6; } }
       @media (prefers-reduced-motion: reduce) { .intro-screen,.hero-copy *,.custom-cursor { transition:none !important; animation:none !important; } }
     </style>
+    <link rel="stylesheet" href="portfolio-refresh.css" />
     <script defer src="script.js"></script>
-    <script type="module" src="scene.js"></script>
   </head>
   <body>
-    <div class="intro-screen" id="intro-screen" aria-label="Portfolio introduction">
-      <div class="intro-top"><a href="#home" class="intro-brand">SHUBHAM<span>®</span></a><span>SOFTWARE · DATA · PRODUCT</span></div>
-      <div class="intro-center"><span class="intro-kicker">BUILD · SHIP · LEARN</span><div class="loader-orbit"><i></i><i></i><i></i><b>S</b></div><p class="intro-progress">EXPERIENCE LOADED <span id="load-count">000</span>%</p><button class="enter-button" id="enter-button">ENTER EXPERIENCE <span>↗</span></button></div>
-      <div class="intro-bottom"><span>GITHUB ACTIONS · JAVASCRIPT · PYTHON</span><span>SIXTEEN FEATURED PROJECTS · GITHUB</span></div>
-    </div>
-    <div class="custom-cursor" aria-hidden="true"><span></span></div>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
     <div class="noise" aria-hidden="true"></div>
     <header class="site-header">
@@ -159,31 +153,32 @@
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#stack">Stack</a><a href="#journey">Background</a><a href="#work">Work</a><a href="#contact">Contact</a>
       </nav>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Switch to light theme" title="Switch theme">☼</button>
       <a class="availability" href="https://github.com/damnsunnyy" target="_blank" rel="noreferrer"><span class="status-dot"></span><span>Open to software opportunities</span><span class="availability-arrow">↗</span></a>
     </header>
 
     <main>
       <section class="hero" id="home">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-line"></span> SHUBHAM MEGHANI <span class="location">PUNE, INDIA · OPEN TO WORK</span></p>
-          <h1>Hi, I am<br /><span class="serif-word">Shubham</span><span class="period">.</span></h1>
-          <p class="hero-role">Software Development · Applied ML · Web</p>
-          <p class="hero-intro">MCA candidate building across full-stack applications, applied machine learning, AI prototypes, iOS, and developer tools. My client-focused internship taught me to clarify requests, communicate early, and <span>check the work before it ships</span>.</p>
-          <div class="hero-actions"><a class="button button-light" href="assets/Shubham-Meghani-Resume-2026.pdf" target="_blank" rel="noreferrer">View resume <span>↗</span></a><a class="text-link" href="#work">Explore projects <span>↘</span></a><a class="text-link" href="https://linkedin.com/in/shubham-meghani/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a><a class="text-link" href="job-hunt/">Job application desk <span>↗</span></a></div>
-          <div class="hero-footnote"><span>SCROLL TO EXPLORE</span><span class="scroll-line"></span></div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> SOFTWARE DEVELOPER <span class="location">PUNE, INDIA · OPEN TO WORK</span></p>
+          <h1>Curious by<br /><span class="serif-word">design.</span></h1>
+          <p class="hero-role">Software, data &amp; useful things.</p>
+          <p class="hero-intro">I’m Shubham, an MCA candidate building projects across full-stack software, applied machine learning, AI, and iOS. I like making complicated ideas clear and useful.</p>
+          <div class="hero-actions"><a class="button button-light" href="#work">Explore projects <span>↘</span></a><a class="text-link" href="assets/Shubham-Meghani-Resume-2026.pdf" target="_blank" rel="noreferrer">Resume <span>↗</span></a><a class="text-link" href="https://linkedin.com/in/shubham-meghani/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a></div>
+          <div class="hero-footnote"><span>SELECTED WORK · 2026</span><span class="scroll-line"></span></div>
         </div>
-        <div class="hero-art" role="group" aria-label="Interactive 3D technology keyboard. Use arrow keys to explore technologies, Enter to filter projects, and Escape to clear the filter." aria-describedby="keyboard-toast" tabindex="0">
-          <div class="art-caption art-caption-top"><span>MY TOOLKIT · IN 3D</span><button class="motion-toggle" id="motion-toggle" aria-label="Pause 3D animation" aria-pressed="false" title="Pause or resume the 3D animation"><span>Ⅱ</span> MOTION ON</button></div>
-          <canvas id="scene" aria-label="A floating 3D keyboard. Drag to rotate and click a key to explore projects using that technology."></canvas>
-          <div class="keyboard-toast" id="keyboard-toast" aria-live="polite">ARROW KEYS TO EXPLORE · ENTER TO FILTER</div>
-          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
-          <div class="art-caption art-caption-bottom"><span>DRAG TO ROTATE</span><span class="art-cross">✳</span><span>CLICK A KEY</span></div>
+        <div class="hero-art" aria-label="Featured work: ModelBench machine learning lab">
+          <a class="feature-card" href="https://damnsunnyy.github.io/ModelBench/" target="_blank" rel="noreferrer">
+            <div class="feature-card-top"><span>FEATURED PROJECT&nbsp; / &nbsp;01</span><span>APPLIED ML</span></div>
+            <div class="feature-image"><img src="assets/project-captures/modelbench.jpg" alt="ModelBench model comparison dashboard" /><span class="feature-stamp">LOCAL<br />FIRST</span></div>
+            <div class="feature-card-bottom"><div><span>COMPARE · EVALUATE · EXPLAIN</span><h2>ModelBench</h2></div><span class="feature-arrow">↗</span></div>
+          </a>
+          <div class="feature-note"><span class="note-mark">66.08%</span><span>measured top-1<br />on Stanford Dogs</span></div>
+          <div class="feature-index">01 <i></i> 16</div>
         </div>
         <div class="hero-index"><span>01</span><i></i><span>03</span></div>
       </section>
 
-      <section class="ticker" aria-label="Technologies"><div class="ticker-track"><span>PYTHON</span><b>✳</b><span>REACT</span><b>✳</b><span>DJANGO</span><b>✳</b><span>JAVA</span><b>✳</b><span>PYTORCH</span><b>✳</b><span>NODE.JS</span><b>✳</b><span>PYTHON</span><b>✳</b><span>REACT</span><b>✳</b><span>DJANGO</span><b>✳</b><span>JAVA</span><b>✳</b><span>PYTORCH</span><b>✳</b><span>NODE.JS</span><b>✳</b></div></section>
+      <section class="ticker" aria-label="Technologies"><div class="ticker-track"><span>PYTHON</span><b>✳</b><span>REACT</span><b>✳</b><span>DJANGO</span><b>✳</b><span>JAVA</span><b>✳</b><span>PYTORCH</span><b>✳</b><span>SWIFTUI</span><b>✳</b><span>NODE.JS</span></div></section>
 
       <section class="stack-section section-pad" id="stack">
         <div class="stack-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> LANGUAGES · FRAMEWORKS · TOOLS</p><h2>My tech<br /><span class="serif-word">stack.</span></h2></div><p>Pick a technology to see it in action across my projects. Each chip filters the repository list below.</p></div>
@@ -211,7 +206,7 @@
         </div>
         <div class="capability-groups">
           <article><span>01 / APPLICATIONS</span><h3>Full-stack software</h3><p>React · Django REST · Supabase · REST APIs · account-aware workflows</p></article>
-          <article><span>02 / OPERATIONS</span><h3>Reliability signals</h3><p>Run history · success rate · runtime trends · failure patterns · read-only API integrations · clear operational reporting</p></article>
+          <article><span>02 / APPLIED ML</span><h3>Thoughtful experiments</h3><p>Leakage-aware workflows · held-out evaluation · model comparison · clear reporting</p></article>
           <article><span>03 / APPLICATIONS</span><h3>Software foundations</h3><p>JavaScript · Python · React · Django · FastAPI · REST APIs · responsive interfaces · Git</p></article>
           <article><span>04 / EXPERIENCE</span><h3>Client-focused delivery</h3><p>Requirement clarification · task tracking · stakeholder updates · documentation · responsive checks · issue follow-through</p></article>
         </div>
@@ -279,7 +274,7 @@
 
       <section class="manifesto section-pad" id="about"><div class="manifesto-aside"><p class="eyebrow"><span class="eyebrow-line"></span> A LITTLE ABOUT ME</p><span class="manifesto-number">02 / 03</span></div><div class="manifesto-main"><h2>Build clearly.<br />Ship carefully.<br /><span class="serif-word">Learn daily.</span></h2><div class="manifesto-bottom"><p>I’m Shubham Meghani, an MCA candidate in Pune building across web applications, applied ML, AI prototypes, and iOS. I bring two months of client-focused website delivery experience, with a practical approach to requirements, communication, documentation, and quality checks.</p><div class="skills"><span>WORKING TOOLKIT</span><p>JavaScript · Python · Java<br />React · Django REST · FastAPI<br />PyTorch · scikit-learn · SwiftUI<br />Git · GitHub Actions · REST APIs</p></div></div></div></section>
 
-      <section class="principles"><div class="principle"><span>01</span><h3>Automate repeatable checks.</h3><p>Use CI to catch problems early and make every release follow the same verified path.</p></div><div class="principle"><span>02</span><h3>Read the delivery signals.</h3><p>Track outcomes, inspect failures, and follow the evidence back to a useful next step.</p></div><div class="principle"><span>03</span><h3>Keep people in the loop.</h3><p>Clear updates, careful checks, and well-documented handoffs still matter when work is automated.</p></div></section>
+      <section class="principles"><div class="principle"><span>01</span><h3>Start with the problem.</h3><p>Make the goal clear before choosing the framework, model, or tool.</p></div><div class="principle"><span>02</span><h3>Show the evidence.</h3><p>Use working demos, measured results, and honest notes about what is still a prototype.</p></div><div class="principle"><span>03</span><h3>Keep learning in public.</h3><p>Build across disciplines, document the trade-offs, and improve the next iteration.</p></div></section>
 
       <section class="contact section-pad" id="contact"><div class="contact-top"><p class="eyebrow"><span class="eyebrow-line"></span> OPEN TO SOFTWARE OPPORTUNITIES</p><span class="manifesto-number">03 / 03</span></div><h2>Let’s make<br /><span class="serif-word">work happen.</span></h2><a class="contact-link" href="mailto:shubham.meghani.work@gmail.com">shubham.meghani.work@gmail.com <span>↗</span></a><div class="contact-bottom"><p>Pune, India · 6265280847<br />MCA candidate · Building practical software across disciplines</p><div class="socials"><a href="https://linkedin.com/in/shubham-meghani/" target="_blank" rel="noreferrer">LINKEDIN ↗</a><a href="https://github.com/damnsunnyy" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="assets/Shubham-Meghani-Resume-2026.pdf" target="_blank" rel="noreferrer">VIEW RESUME ↗</a><a href="job-hunt/">JOB APPLICATION DESK ↗</a></div></div></section>
     </main>
