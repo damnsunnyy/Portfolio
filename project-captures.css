@@ -95,3 +95,4 @@
 @media (prefers-reduced-motion: reduce) {
   .project-screenshot { transition: none; }
 }
+.ranking-list li.rank-tier{display:block;padding:15px 0 6px;border-bottom:1px solid #ffffff22;color:#c8f46b;font:8px 'DM Mono',monospace;letter-spacing:.1em}
