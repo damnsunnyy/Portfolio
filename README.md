@@ -1,6 +1,6 @@
 # Shubham — personal portfolio
 
-A responsive portfolio for Shubham, curated from the public `damnsunnyy` GitHub profile and spanning full-stack applications, applied machine learning, AI prototypes, iOS, and developer tools. Its dark, dimensional design opens directly to a featured project, with restrained 3D motion, a selectable tech stack, a GitHub project timeline, project-strength rankings, scroll progress, and live screenshots from deployed project interfaces. Typefaces load from Google Fonts; technology logos are stored locally.
+A responsive portfolio for Shubham, curated from the public `damnsunnyy` GitHub profile and spanning full-stack applications, applied machine learning, AI prototypes, iOS, and developer tools. The dark, animated hero turns Apply Desk into a dimensional career workflow, with orbiting modules for discovering roles, preparing a résumé, and tracking applications. The page also includes a selectable tech stack, a GitHub project timeline, project-strength rankings, scroll progress, and live project screenshots. Typefaces load from Google Fonts; technology logos are stored locally.
 
 ## Personalize it
 
