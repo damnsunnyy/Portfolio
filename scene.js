@@ -26,7 +26,7 @@ keyboard.add(trim);
 const colors = [0xffa15e, 0x69d9f5, 0xb593f9, 0x9cdb79, 0xf07879, 0x6f9df5, 0xf2d36e];
 const techs = [
   ['Py','python','Python · machine learning','python'],['PT','pytorch','PyTorch · computer vision','pytorch'],['JS','javascript','JavaScript · interactive apps','javascript'],['Re','react','React · streaming and collaboration','react'],['Dj','django','Django · full-stack web','django'],['J','java','Java · resume matching','openjdk'],['Sp','spring','Spring · backend services','spring'],
-  ['AI','python','Python · applied AI','python'],['<>','javascript','JavaScript · the web','javascript'],['DB','mongodb','MongoDB · document storage','mongodb'],['SQL','sqlite','SQLite · lightweight data','sqlite'],['Ex','express','Express · web APIs','express'],['↔','socketio','Socket.IO · real-time sync','socketdotio'],['ND','node','Node.js · server-side JavaScript','nodedotjs'],
+  ['CI','githubactions','GitHub Actions · CI/CD','githubactions'],['<>','javascript','JavaScript · the web','javascript'],['DB','mongodb','MongoDB · document storage','mongodb'],['SQL','sqlite','SQLite · lightweight data','sqlite'],['Ex','express','Express · web APIs','express'],['↔','socketio','Socket.IO · real-time sync','socketdotio'],['ND','node','Node.js · server-side JavaScript','nodedotjs'],
   ['HT','html','HTML · accessible page structure','html5'],['CSS','css','CSS · responsive interface styling','css'],['ML','pytorch','PyTorch · model training','pytorch'],['API','fastapi','FastAPI · local event API','fastapi'],['DOC','socketio','Socket.IO · DocsFlow collaboration','socketdotio'],['CV','pytorch','Computer vision · 120 breeds','pytorch'],['ATS','java','Java · applicant tracking','openjdk']
 ];
 const keyGeometry = new THREE.BoxGeometry(.65, .19, .62);

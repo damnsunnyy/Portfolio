@@ -1,6 +1,6 @@
 # Shubham — personal portfolio
 
-A responsive portfolio for Shubham, personalized with projects from the public `damnsunnyy` GitHub profile. It features a starfield, an interactive Three.js keyboard whose keys filter projects, genuine technology logos, a selectable tech stack, a GitHub project timeline, dark/light themes, an animated opening sequence, scroll progress, and live screenshots from deployed project interfaces. Three.js and the typefaces load from external CDNs; the technology logos are stored locally.
+A responsive portfolio for Shubham, curated from the public `damnsunnyy` GitHub profile and now foregrounding hands-on DevOps work. It features a starfield, an interactive Three.js keyboard whose keys filter projects, genuine technology logos, a selectable tech stack, a GitHub project timeline, dark/light themes, an animated opening sequence, scroll progress, and live screenshots from deployed project interfaces. Three.js and the typefaces load from external CDNs; the technology logos are stored locally.
 
 ## Personalize it
 
@@ -8,6 +8,7 @@ Edit `index.html` to change the name, bio, repository descriptions, timeline, an
 
 ## Featured repositories
 
+- [RunScope](https://github.com/damnsunnyy/RunScope) — live GitHub Actions health dashboard for release reliability, run times, and failure patterns
 - `stanford-dog-breed-recognition` — ResNet-18 image classification research
 - `TODO-APP` — React, Django REST Framework, and SQLite
 - `react-streaming-catalog` — StreamBox movie discovery and watchlist UI
@@ -32,9 +33,14 @@ GitHub Pages serves the portfolio as a static site. Its Actions workflow also bu
 
 Open the standalone [Apply Desk live app](https://damnsunnyy.github.io/ApplyDesk/) or browse its [GitHub repository](https://github.com/damnsunnyy/ApplyDesk). It helps users search roles, prepare a role-focused résumé, and track applications and shortlist/interview signals. Each account's rows are isolated with database row-level security. The optional [Chrome helper](browser-helper/README.md) can capture pages, log an open email, and fill clear profile fields; it never submits applications.
 
+## Live demos
+
+- [RunScope](https://damnsunnyy.github.io/RunScope/) — live read-only GitHub Actions health dashboard
+- [Apply Desk live app](https://damnsunnyy.github.io/ApplyDesk/)
 - [RepoRadar live demo](https://damnsunnyy.github.io/RepoRadar/)
 - [SiteSentry live demo](https://damnsunnyy.github.io/SiteSentry/)
 - [ModelBench live demo](https://damnsunnyy.github.io/ModelBench/)
+- [HTML DOM Visualizer](https://damnsunnyy.github.io/HTML-DOM-Visualizer/)
 
 ## More projects
 
@@ -47,7 +53,7 @@ The public portfolio includes [Shubham Meghani’s updated one-page resume PDF](
 
 ## Project imagery
 
-`assets/project-captures/` contains reduced-size captures of the live RepoRadar, SiteSentry, HTML DOM Visualizer, and ModelBench interfaces, plus the Echo dashboard and Stanford Dogs held-out recall figure. The portfolio labels previews and research figures to distinguish them from one another. The RoadTrip card describes its documented prototype flow without presenting sample rider locations as live data.
+`assets/project-captures/` contains reduced-size captures of the live RunScope, RepoRadar, SiteSentry, HTML DOM Visualizer, ModelBench, and Apply Desk interfaces, plus the Echo dashboard, StreamBox catalog, and Stanford Dogs held-out recall figure. The portfolio labels live previews and research figures to distinguish them from one another. The RoadTrip card describes its documented prototype flow without presenting sample rider locations as live data.
 
 ## Contact
 

@@ -31,7 +31,8 @@
 .visual-radar:after,
 .visual-sentry:after,
 .visual-dom:after,
-.visual-modelbench:after {
+.visual-modelbench:after,
+.visual-runscope:after {
   content: "";
   position: absolute;
   inset: 55% 0 0;
@@ -42,7 +43,8 @@
 .visual-radar .visual-label,
 .visual-sentry .visual-label,
 .visual-dom .visual-label,
-.visual-modelbench .visual-label {
+.visual-modelbench .visual-label,
+.visual-runscope .visual-label {
   z-index: 2;
   color: #f5f5f5;
 }

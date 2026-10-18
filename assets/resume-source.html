@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Shubham Meghani — Resume</title>
+  <title>Shubham Meghani — DevOps Resume</title>
   <style>
     @page { size: A4; margin: 12mm 15mm 13mm; }
     * { box-sizing: border-box; }
     body { margin: 0; color: #171717; background: #fff; font-family: Georgia, "Times New Roman", serif; font-size: 9.8pt; line-height: 1.22; }
     header { text-align: center; margin: 0 0 12px; }
     h1 { margin: 0 0 3px; font-size: 20pt; font-weight: 600; letter-spacing: .035em; }
+    .target { margin-top: 2px; color: #3f5140; font: 7.8pt/1.3 Arial, sans-serif; letter-spacing: .13em; }
     .contact { font-size: 8.5pt; line-height: 1.42; }
     .contact a { color: inherit; text-decoration: none; }
     section { margin-top: 10px; }
@@ -34,17 +35,18 @@
 <body>
   <header>
     <h1>SHUBHAM MEGHANI</h1>
+    <div class="target">MCA CANDIDATE · DEVOPS / CI/CD PROJECTS</div>
     <div class="contact">Pune, India &nbsp;|&nbsp; 6265280847 &nbsp;|&nbsp; <a href="mailto:shubham.meghani.work@gmail.com">shubham.meghani.work@gmail.com</a><br /><a href="https://linkedin.com/in/shubham-meghani/">linkedin.com/in/shubham-meghani/</a> &nbsp;|&nbsp; <a href="https://github.com/damnsunnyy">github.com/damnsunnyy</a></div>
   </header>
 
   <section>
     <h2>PROFESSIONAL SUMMARY</h2>
-    <p>MCA candidate with practical experience in client-focused website delivery, responsive UI updates, technical documentation, and collaborative project workflows. Skilled at clarifying requirements, coordinating implementation, resolving issues, and checking deliverables. Brings hands-on knowledge across web, data, AI, cloud, and iOS projects.</p>
+    <p>MCA candidate building a hands-on DevOps foundation through GitHub Actions CI/CD, automated validation, release visibility, and GitHub Pages deployments. Brings two months of client-focused website delivery experience, with strengths in requirement analysis, technical documentation, issue follow-through, and quality checks. Seeking entry-level DevOps, CI/CD, or cloud operations opportunities.</p>
   </section>
 
   <section>
     <h2>CORE COMPETENCIES</h2>
-    <p>Project Coordination &nbsp;|&nbsp; Requirement Analysis &nbsp;|&nbsp; Task and Deliverable Tracking &nbsp;|&nbsp; Client Communication &nbsp;|&nbsp; Stakeholder Coordination &nbsp;|&nbsp; Team Collaboration &nbsp;|&nbsp; Documentation &amp; Reporting &nbsp;|&nbsp; Quality Assurance &nbsp;|&nbsp; Issue Resolution &nbsp;|&nbsp; Agile Development</p>
+    <p>Git &amp; GitHub &nbsp;|&nbsp; GitHub Actions &nbsp;|&nbsp; CI/CD Workflows &nbsp;|&nbsp; Build and Deployment Validation &nbsp;|&nbsp; Release Health Reporting &nbsp;|&nbsp; REST API Integration &nbsp;|&nbsp; Issue Triage &nbsp;|&nbsp; Technical Documentation &nbsp;|&nbsp; Requirement Analysis &nbsp;|&nbsp; Client Communication</p>
   </section>
 
   <section>
@@ -55,12 +57,11 @@
 
   <section class="skills">
     <h2>TECHNICAL SKILLS</h2>
-    <p><strong>Programming:</strong> Python, Java, C++, JavaScript, SQL</p>
-    <p><strong>Web:</strong> HTML, CSS, WordPress, Django, Flask, Next.js, FastAPI, REST APIs</p>
-    <p><strong>Data &amp; AI:</strong> Pandas, scikit-learn, NLP, TF-IDF, regression, classification, Generative AI</p>
-    <p><strong>Databases &amp; Cloud:</strong> MySQL, Microsoft SQL Server, AWS, Azure</p>
-    <p><strong>Analytics &amp; Tools:</strong> Power BI, DAX, Excel, Git, Xcode, Streamlit, Microsoft Office</p>
-    <p><strong>Mobile:</strong> Swift, SwiftUI, iOS, Firebase, Core Location, MapKit</p>
+    <p><strong>CI/CD:</strong> Git, GitHub, GitHub Actions, workflow validation, automated GitHub Pages deployments</p>
+    <p><strong>Programming:</strong> JavaScript, Python, Java, SQL</p>
+    <p><strong>Application &amp; API:</strong> HTML, CSS, REST APIs, Node.js, React, Django, FastAPI, Supabase</p>
+    <p><strong>Cloud familiarity:</strong> AWS, Azure &nbsp; <strong>Data &amp; AI:</strong> Pandas, scikit-learn, PyTorch, NLP</p>
+    <p><strong>Other tools:</strong> Power BI, DAX, Excel, Xcode, Streamlit, Microsoft Office</p>
   </section>
 
   <section>
@@ -79,24 +80,24 @@
   <section class="projects">
     <h2>SELECTED PROJECTS</h2>
     <div class="entry">
-      <p class="project-line"><strong><a href="https://github.com/damnsunnyy/stanford-dog-breed-recognition">Stanford Dog Breed Recognition</a></strong> <span>· Python, PyTorch, ResNet-18</span></p>
+      <p class="project-line"><strong><a href="https://github.com/damnsunnyy/RunScope">RunScope — GitHub Actions Health Dashboard</a></strong> <span>· JavaScript, GitHub REST API, Node.js</span> · <a href="https://damnsunnyy.github.io/RunScope/">Live demo</a></p>
       <ul>
-        <li>Trained and evaluated a 120-class dog breed classifier using the Stanford Dogs dataset and an ImageNet-pretrained ResNet-18.</li>
-        <li>Recorded 66.08% top-1 accuracy and 64.92% macro F1 on the official 8,580-image test partition; documented the single-run baseline and evaluation method.</li>
+        <li>Built a read-only dashboard that analyzes public workflow history, including pass rate, successful-run median duration, daily trends, and grouped failures.</li>
+        <li>Added six metric unit tests and a GitHub Actions pipeline that validates, builds, and deploys the site to GitHub Pages.</li>
       </ul>
     </div>
     <div class="entry">
-      <p class="project-line"><strong><a href="https://github.com/damnsunnyy/Echo">SANA — Personal AI Assistant (Echo)</a></strong> <span>· Python, Faster Whisper, Ollama, FastAPI, React</span></p>
+      <p class="project-line"><strong><a href="https://github.com/damnsunnyy/Portfolio">Portfolio — CI/CD Delivery Pipeline</a></strong> <span>· GitHub Actions, Node.js, GitHub Pages</span> · <a href="https://damnsunnyy.github.io/Portfolio/">Live site</a></p>
       <ul>
-        <li>Built a local-first voice assistant prototype with speech transcription, Ollama responses, allowlisted desktop actions, and local preference memory.</li>
-        <li>Connected FastAPI event endpoints and a React dashboard for live assistant activity; designed for local desktop use.</li>
+        <li>Automated the Apply Desk asset build and site publication on pushes to the main branch using a GitHub Pages deployment workflow.</li>
+        <li>Published the profile site, resume, project demos, and current project captures as one reviewable release.</li>
       </ul>
     </div>
     <div class="entry">
-      <p class="project-line"><strong><a href="https://github.com/damnsunnyy/RoadTrip">RoadTrip — Motorcycle Group Ride App</a></strong> <span>· SwiftUI, Firebase Firestore, Core Location, MapKit</span></p>
+      <p class="project-line"><strong><a href="https://github.com/damnsunnyy/ApplyDesk">Apply Desk — Job Search Workspace</a></strong> <span>· JavaScript, Supabase, Gmail API</span> · <a href="https://damnsunnyy.github.io/ApplyDesk/">Live app</a></p>
       <ul>
-        <li>Developed an iOS prototype for creating and joining rides with short invite codes, a six-rider limit, and Firestore-backed ride data.</li>
-        <li>Built SwiftUI ride and group-map workflows with location-sharing foundations; the project is an in-progress prototype.</li>
+        <li>Developed a role search and application tracking app with account-isolated records protected by database row-level security.</li>
+        <li>Deployed the static frontend to GitHub Pages; the optional Gmail connection reads message signals only.</li>
       </ul>
     </div>
   </section>
