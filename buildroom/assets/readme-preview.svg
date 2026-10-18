@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 520" role="img" aria-labelledby="title desc">
+  <title id="title">Buildroom — an interactive 3D DevOps profile</title>
+  <desc id="desc">Original 3D inspired CSS pipeline map with a core cube, four delivery stages, floating cards for RunScope, the portfolio, and StreamBox, and a live GitHub Actions signal panel. Click to enter the interactive room.</desc>
+  <defs>
+    <linearGradient id="bg" x2="0.9" y2="1"><stop stop-color="#112329"/><stop offset=".52" stop-color="#071115"/><stop offset="1" stop-color="#0b171a"/></linearGradient>
+    <linearGradient id="cube" x2="1" y2="1"><stop stop-color="#2b7863"/><stop offset="1" stop-color="#102e31"/></linearGradient>
+    <linearGradient id="card" x2="0" y2="1"><stop stop-color="#183236"/><stop offset="1" stop-color="#0b171c"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#6ce6ba" stop-opacity=".26"/><stop offset="1" stop-color="#6ce6ba" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0v34" fill="none" stroke="#74d9c7" stroke-opacity=".11" stroke-width="1"/></pattern>
+    <filter id="shadow" x="-.5" y="-.5" width="2" height="2"><feGaussianBlur stdDeviation="15"/></filter>
+  </defs>
+  <rect width="1440" height="520" rx="16" fill="url(#bg)"/>
+  <rect width="1440" height="520" rx="16" fill="url(#grid)" opacity=".48"/>
+  <ellipse cx="660" cy="269" rx="480" ry="330" fill="url(#glow)"/>
+  <path d="M28 74V28h46M1366 28h46v46M28 446v46h46m1292-46v46h-46" fill="none" stroke="#69d8ba" stroke-opacity=".5" stroke-width="2"/>
+  <text x="64" y="66" fill="#83f0c1" font-family="monospace" font-size="12" letter-spacing="3">SHUBHAM MEGHANI / BUILDROOM 001</text>
+  <circle cx="1353" cy="61" r="4" fill="#83f0c1"/><text x="1368" y="65" fill="#9eb5b2" font-family="monospace" font-size="9" letter-spacing="2">INTERACTIVE PROFILE</text>
+  <text x="64" y="175" fill="#eff6f2" font-family="Arial,sans-serif" font-size="62" font-weight="700" letter-spacing="-3">BUILD IT.</text>
+  <text x="64" y="239" fill="#83f0c1" font-family="Arial,sans-serif" font-size="62" font-weight="700" letter-spacing="-3">WATCH IT SHIP.</text>
+  <text x="67" y="279" fill="#a1b6b5" font-family="monospace" font-size="11" letter-spacing="1">A ROTATABLE, 3D MAP OF MY PROJECTS</text>
+  <text x="67" y="313" fill="#6e8d8f" font-family="monospace" font-size="9" letter-spacing="1.2">DRAG THE SCENE · INSPECT REAL WORKFLOW SIGNAL</text>
+  <g transform="translate(418 40)">
+    <ellipse cx="327" cy="229" rx="310" ry="132" fill="none" stroke="#66ddc5" stroke-opacity=".34" stroke-width="1.4" transform="rotate(-14 327 229)"/>
+    <ellipse cx="327" cy="229" rx="278" ry="179" fill="none" stroke="#77bcb9" stroke-opacity=".21" stroke-width="1" transform="rotate(22 327 229)"/>
+    <path d="M93 233C178 125 466 119 562 232M180 329c96 64 258 35 330-47" fill="none" stroke="#67dbb9" stroke-opacity=".35" stroke-width="2" stroke-dasharray="5 8"/>
+    <g transform="translate(322 206)" filter="url(#shadow)" opacity=".7"><circle r="91" fill="#5decc3"/></g>
+    <g transform="translate(326 207)">
+      <path d="m0-57 54 29v61L0 62-54 33v-61z" fill="url(#cube)" stroke="#93f4d2" stroke-width="2"/>
+      <path d="M0-57v61m54-32L0 4l-54-32m54 32v58" fill="none" stroke="#9fffe0" stroke-opacity=".8" stroke-width="2"/>
+      <path d="m0-57 54 29L0 4-54-28z" fill="#57b89e" fill-opacity=".2"/>
+      <text x="0" y="-19" fill="#d4fff0" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">CI</text>
+      <text x="26" y="27" fill="#d7ff83" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">CD</text>
+    </g>
+    <g font-family="monospace" font-size="9" letter-spacing="1">
+      <g transform="translate(143 166)"><rect width="83" height="28" rx="4" fill="#0e2528" stroke="#4aa391"/><circle cx="14" cy="14" r="3" fill="#83f0c1"/><text x="25" y="17" fill="#c1d6d1">COMMIT</text></g>
+      <g transform="translate(246 79)"><rect width="79" height="28" rx="4" fill="#0e2528" stroke="#4aa391"/><circle cx="14" cy="14" r="3" fill="#83f0c1"/><text x="25" y="17" fill="#c1d6d1">VERIFY</text></g>
+      <g transform="translate(427 122)"><rect width="93" height="28" rx="4" fill="#0e2528" stroke="#4aa391"/><circle cx="14" cy="14" r="3" fill="#83f0c1"/><text x="25" y="17" fill="#c1d6d1">PACKAGE</text></g>
+      <g transform="translate(450 277)"><rect width="81" height="28" rx="4" fill="#0e2528" stroke="#4aa391"/><circle cx="14" cy="14" r="3" fill="#83f0c1"/><text x="25" y="17" fill="#c1d6d1">RELEASE</text></g>
+    </g>
+    <g transform="translate(30 86)">
+      <rect width="173" height="106" rx="5" fill="url(#card)" stroke="#466f70"/>
+      <text x="13" y="19" fill="#86a09d" font-family="monospace" font-size="8" letter-spacing="1">01 / OBSERVE</text><text x="13" y="53" fill="#83f0c1" font-family="monospace" font-size="11">R ↗</text><text x="13" y="74" fill="#eef7f1" font-family="Arial,sans-serif" font-weight="bold" font-size="16">RunScope</text><text x="13" y="91" fill="#92a9a5" font-family="monospace" font-size="8">ACTIONS HEALTH · LIVE</text>
+    </g>
+    <g transform="translate(519 186)">
+      <rect width="173" height="106" rx="5" fill="url(#card)" stroke="#466f70"/>
+      <text x="13" y="19" fill="#86a09d" font-family="monospace" font-size="8" letter-spacing="1">02 / DELIVER</text><text x="13" y="53" fill="#71d5e6" font-family="monospace" font-size="11">&lt;/&gt;</text><text x="13" y="74" fill="#eef7f1" font-family="Arial,sans-serif" font-weight="bold" font-size="16">Portfolio</text><text x="13" y="91" fill="#92a9a5" font-family="monospace" font-size="8">BUILD · PUBLISH · PAGES</text>
+    </g>
+    <g transform="translate(228 354)">
+      <rect width="173" height="106" rx="5" fill="url(#card)" stroke="#466f70"/>
+      <text x="13" y="19" fill="#86a09d" font-family="monospace" font-size="8" letter-spacing="1">03 / CREATE</text><text x="13" y="53" fill="#e0d993" font-family="monospace" font-size="11">S ▶</text><text x="13" y="74" fill="#eef7f1" font-family="Arial,sans-serif" font-weight="bold" font-size="16">StreamBox</text><text x="13" y="91" fill="#92a9a5" font-family="monospace" font-size="8">REACT · LIVE DEMO</text>
+    </g>
+  </g>
+  <g transform="translate(1161 123)">
+    <rect width="218" height="284" rx="6" fill="#0b171b" stroke="#315157"/>
+    <text x="17" y="27" fill="#83f0c1" font-family="monospace" font-size="9" letter-spacing="1">PUBLIC SIGNAL / GITHUB API</text>
+    <text x="17" y="68" fill="#e7f3ee" font-family="Arial,sans-serif" font-size="22" font-weight="bold">Last workflow</text><text x="17" y="94" fill="#e7f3ee" font-family="Arial,sans-serif" font-size="22" font-weight="bold">run.</text>
+    <g font-family="monospace" font-size="8"><rect x="14" y="117" width="190" height="41" rx="3" fill="#0d1f22" stroke="#203c40"/><circle cx="27" cy="138" r="3" fill="#83f0c1"/><text x="39" y="135" fill="#d2e1dc">RUNSCOPE</text><text x="39" y="148" fill="#819a99">LATEST · PUBLIC API</text><rect x="14" y="166" width="190" height="41" rx="3" fill="#0d1f22" stroke="#203c40"/><circle cx="27" cy="187" r="3" fill="#83f0c1"/><text x="39" y="184" fill="#d2e1dc">PORTFOLIO</text><text x="39" y="197" fill="#819a99">PAGES · WORKFLOW</text><rect x="14" y="215" width="190" height="41" rx="3" fill="#0d1f22" stroke="#203c40"/><circle cx="27" cy="236" r="3" fill="#83f0c1"/><text x="39" y="233" fill="#d2e1dc">STREAMBOX</text><text x="39" y="246" fill="#819a99">PAGES · WORKFLOW</text></g>
+  </g>
+  <rect x="64" y="435" width="286" height="38" rx="4" fill="#12322c" stroke="#4aa391"/><text x="84" y="459" fill="#a8ffda" font-family="monospace" font-size="10" letter-spacing="1.2">CLICK TO ENTER THE BUILDROOM</text><text x="326" y="459" fill="#a8ffda" font-family="monospace" font-size="14">↗</text>
+  <text x="65" y="495" fill="#59787c" font-family="monospace" font-size="8" letter-spacing="1.5">THREE PROJECTS · PUBLIC SIGNAL · CSS TRANSFORMS</text>
+</svg>

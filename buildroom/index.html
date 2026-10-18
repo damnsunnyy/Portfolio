@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#071014" />
+    <meta name="description" content="Enter Shubham Meghani's interactive 3D DevOps buildroom. Explore live projects and recent public GitHub Actions runs." />
+    <meta property="og:title" content="Buildroom — Shubham Meghani" />
+    <meta property="og:description" content="A rotatable 3D project room with real deployments and live public GitHub Actions signals." />
+    <meta property="og:image" content="https://damnsunnyy.github.io/Portfolio/buildroom/assets/readme-preview.svg" />
+    <meta property="og:url" content="https://damnsunnyy.github.io/Portfolio/buildroom/" />
+    <title>Buildroom — Shubham Meghani</title>
+    <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="wordmark" href="https://github.com/damnsunnyy" aria-label="Shubham Meghani on GitHub"><span class="wordmark-mark">S<span>.</span></span><span>SHUBHAM MEGHANI <small>BUILDROOM / 001</small></span></a>
+      <div class="top-status"><i></i><span>INTERACTIVE PROFILE</span><b>·</b><span>DEVOPS / CI/CD</span></div>
+      <a class="top-link" href="https://github.com/damnsunnyy">GITHUB <span>↗</span></a>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="eyebrow"><span class="eyebrow-line"></span> A PORTFOLIO YOU CAN TURN</p>
+        <h1>Build it.<br /><em>Watch it ship.</em></h1>
+        <p class="intro-copy">A little 3D room for the things I build, deploy, and learn. Drag to rotate. Open a project. Inspect the latest public workflow signal.</p>
+        <div class="intro-badges"><span>MADE IN CSS + JAVASCRIPT</span><span>NO 3D ENGINE</span><span>JUST THE LIVE SIGNAL</span></div>
+      </section>
+
+      <section class="flightdeck" aria-labelledby="deck-title">
+        <div class="deck-heading"><div><p class="eyebrow">01 — THE BUILDROOM</p><h2 id="deck-title">Your cursor is the camera.</h2></div><span class="deck-hint"><kbd>←</kbd><kbd>→</kbd> OR DRAG THE SCENE</span></div>
+        <div class="deck-layout">
+          <div class="stage-wrap">
+            <div class="stage" id="stage" tabindex="0" role="group" aria-label="Interactive three-dimensional project map. Use left and right arrow keys or drag to rotate the view.">
+              <div class="world" id="world">
+                <div class="world-grid" aria-hidden="true"></div>
+                <div class="orbit orbit-one" aria-hidden="true"></div>
+                <div class="orbit orbit-two" aria-hidden="true"></div>
+                <div class="orbit-label orbit-label-a" aria-hidden="true">DELIVERY LOOP <b>01—04</b></div>
+                <div class="pipeline" aria-label="Pipeline stages: commit, verify, package, release">
+                  <div class="pipe-node pipe-commit"><span class="pipe-dot"></span>COMMIT</div>
+                  <div class="pipe-node pipe-verify"><span class="pipe-dot"></span>VERIFY</div>
+                  <div class="pipe-node pipe-package"><span class="pipe-dot"></span>PACKAGE</div>
+                  <div class="pipe-node pipe-release"><span class="pipe-dot"></span>RELEASE</div>
+                  <div class="pipe-core"><svg class="cube-visual" viewBox="0 0 140 150" role="img" aria-label="Isometric build cube representing continuous integration and delivery"><defs><linearGradient id="faceTop" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#71dfb2"/><stop offset="1" stop-color="#347f72"/></linearGradient><linearGradient id="faceLeft" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#237b65"/><stop offset="1" stop-color="#144b4a"/></linearGradient><linearGradient id="faceRight" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1d5962"/><stop offset="1" stop-color="#102c3a"/></linearGradient></defs><path d="M70 15 124 46 70 77 16 46Z" fill="url(#faceTop)" stroke="#a5ffdc" stroke-width="1.4"/><path d="M16 46 70 77v61L16 107Z" fill="url(#faceLeft)" stroke="#82ecc6" stroke-width="1.4"/><path d="m124 46-54 31v61l54-31Z" fill="url(#faceRight)" stroke="#7ad9dd" stroke-width="1.4"/><path d="m70 15 0 62m54-31-54 31-54-31" fill="none" stroke="#d2ffeb" stroke-opacity=".5" stroke-width="1"/><text x="70" y="46" fill="#103b34" font-family="monospace" font-size="10" font-weight="700" letter-spacing="1" text-anchor="middle">SHIP</text><text x="42" y="91" fill="#e0fff1" font-family="monospace" font-size="11" font-weight="700" text-anchor="middle">CI</text><text x="91" y="91" fill="#ddfbff" font-family="monospace" font-size="11" font-weight="700" text-anchor="middle">CD</text><circle cx="70" cy="27" r="2" fill="#effff6"/></svg><span class="core-ring" aria-hidden="true"></span><span class="core-label">PIPELINE<br />CORE</span></div>
+                </div>
+
+                <article class="project-tile tile-runscope">
+                  <div class="tile-top"><span class="tile-index">01 / OBSERVE</span><span class="signal signal-wait" data-signal="runscope">SCANNING</span></div>
+                  <div class="tile-icon icon-runscope">R<span>↗</span></div><h3>RunScope</h3><p>GitHub Actions health · real workflow history</p>
+                  <div class="tile-bottom"><a href="https://damnsunnyy.github.io/RunScope/">OPEN DASHBOARD ↗</a><a class="source-link" href="https://github.com/damnsunnyy/RunScope" aria-label="RunScope source repository">SRC</a></div>
+                </article>
+                <article class="project-tile tile-portfolio">
+                  <div class="tile-top"><span class="tile-index">02 / DELIVER</span><span class="signal signal-static">PAGES / LIVE</span></div>
+                  <div class="tile-icon icon-portfolio">&lt;/&gt;</div><h3>Portfolio</h3><p>Static site · build, validate, publish</p>
+                  <div class="tile-bottom"><a href="https://damnsunnyy.github.io/Portfolio/">VISIT SITE ↗</a><a class="source-link" href="https://github.com/damnsunnyy/Portfolio" aria-label="Portfolio source repository">SRC</a></div>
+                </article>
+                <article class="project-tile tile-streambox">
+                  <div class="tile-top"><span class="tile-index">03 / CREATE</span><span class="signal signal-wait" data-signal="streambox">SCANNING</span></div>
+                  <div class="tile-icon icon-streambox">S<span>▶</span></div><h3>StreamBox</h3><p>React catalog · Pages deployment workflow</p>
+                  <div class="tile-bottom"><a href="https://damnsunnyy.github.io/react-streaming-catalog/">OPEN LIVE DEMO ↗</a><a class="source-link" href="https://github.com/damnsunnyy/react-streaming-catalog" aria-label="StreamBox source repository">SRC</a></div>
+                </article>
+              <div class="coordinate coordinate-nw" aria-hidden="true">BUILDROOM / 001<br />READ-ONLY PROJECT MAP</div>
+              <div class="coordinate coordinate-se" aria-hidden="true">CAMERA FRAME<br />NO. <span id="frame-readout">000</span></div>
+                <div class="horizon" aria-hidden="true"></div>
+              </div>
+            </div>
+            <div class="stage-footer"><span><i class="live-dot"></i> PROJECT LINKS OPEN REAL DEPLOYMENTS</span><span>DRAG · ARROWS · CLICK</span></div>
+          </div>
+
+          <aside class="signal-panel" aria-labelledby="signal-title">
+            <div class="panel-top"><span class="panel-mark">⌁</span><span>PUBLIC SIGNAL / GITHUB API</span></div>
+            <h2 id="signal-title">Last workflow<br />run.</h2>
+            <p class="panel-copy">Live, read-only status from public GitHub Actions. No token, no private data.</p>
+            <div class="run-list" id="run-list" aria-live="polite">
+              <a class="run-row" data-run="runscope" href="https://github.com/damnsunnyy/RunScope/actions"><span class="run-indicator idle"></span><div><b>RUNSCOPE</b><small>Waiting for public workflow history…</small></div><span class="run-state">···</span></a>
+              <a class="run-row" data-run="portfolio" href="https://github.com/damnsunnyy/Portfolio/actions"><span class="run-indicator idle"></span><div><b>PORTFOLIO</b><small>Waiting for public workflow history…</small></div><span class="run-state">···</span></a>
+              <a class="run-row" data-run="streambox" href="https://github.com/damnsunnyy/react-streaming-catalog/actions"><span class="run-indicator idle"></span><div><b>STREAMBOX</b><small>Waiting for public workflow history…</small></div><span class="run-state">···</span></a>
+            </div>
+            <button class="scan-button" id="scan-button" type="button"><span>↻</span> SCAN WORKFLOWS <kbd>↵</kbd></button>
+            <p class="api-note" id="api-note">FETCHES THE LATEST PUBLIC RUN WHEN THIS PAGE OPENS</p>
+            <div class="panel-rule"></div>
+            <div class="build-stats"><div><span>LIVE DEMOS</span><b>09</b></div><div><span>3D ENGINE</span><b>CSS</b></div><div><span>TRACKERS</span><b>ZERO</b></div></div>
+          </aside>
+        </div>
+        <div class="deck-controls" aria-label="Scene controls"><span>REORIENT THE ROOM</span><button type="button" data-turn="-1" aria-label="Rotate room left">↶</button><button type="button" data-turn="1" aria-label="Rotate room right">↷</button><button type="button" id="reset-view">RESET VIEW <span>⟲</span></button><span class="controls-spacer"></span><span>THIS ROOM RUNS ON CSS TRANSFORMS</span></div>
+      </section>
+
+      <section class="route-section" aria-labelledby="route-title">
+        <div class="route-title"><p class="eyebrow">02 — ROUTE MAP</p><h2 id="route-title">The stack behind the signal.</h2><p>Small, real projects. Each station opens its source or a working demo.</p></div>
+        <div class="route-grid">
+          <a class="route-card" href="https://github.com/damnsunnyy/RunScope"><span>01 / PUBLIC API</span><b>GitHub Actions<br />→ RunScope</b><i>READ-ONLY SIGNAL ↗</i></a>
+          <a class="route-card" href="https://github.com/damnsunnyy/Portfolio"><span>02 / DELIVERY</span><b>GitHub Actions<br />→ GitHub Pages</b><i>BUILD · DEPLOY · VERIFY ↗</i></a>
+          <a class="route-card" href="https://github.com/damnsunnyy/react-streaming-catalog"><span>03 / APPLICATION</span><b>React + Vite<br />→ StreamBox</b><i>CI · BUILD · PUBLISH ↗</i></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><a href="https://github.com/damnsunnyy">SHUBHAM MEGHANI</a><span>MADE TO BE EXPLORED · SOURCE IS PUBLIC</span><div><a href="mailto:shubham.meghani.work@gmail.com">SAY HELLO ↗</a><a href="https://damnsunnyy.github.io/Portfolio/assets/Shubham-Meghani-Resume-2026.pdf">RESUME ↗</a></div></footer>
+  </body>
+</html>

@@ -8,6 +8,7 @@ Edit `index.html` to change the name, bio, repository descriptions, timeline, an
 
 ## Featured repositories
 
+- [Buildroom](https://github.com/damnsunnyy/Portfolio/tree/main/buildroom) — [interactive 3D profile room](https://damnsunnyy.github.io/Portfolio/buildroom/) with rotatable project cards and live public workflow signals
 - [RunScope](https://github.com/damnsunnyy/RunScope) — live GitHub Actions health dashboard for release reliability, run times, and failure patterns
 - `stanford-dog-breed-recognition` — ResNet-18 image classification research
 - [TODO-APP](https://github.com/damnsunnyy/TODO-APP) — [live browser demo](https://damnsunnyy.github.io/TODO-APP/) · React, Django REST Framework, and SQLite
@@ -41,6 +42,9 @@ Open the standalone [Apply Desk live app](https://damnsunnyy.github.io/ApplyDesk
 - [SiteSentry live demo](https://damnsunnyy.github.io/SiteSentry/)
 - [ModelBench live demo](https://damnsunnyy.github.io/ModelBench/)
 - [HTML DOM Visualizer](https://damnsunnyy.github.io/HTML-DOM-Visualizer/)
+- [StreamBox Catalog](https://damnsunnyy.github.io/react-streaming-catalog/)
+- [Todo browser demo](https://damnsunnyy.github.io/TODO-APP/)
+- [Buildroom interactive profile](https://damnsunnyy.github.io/Portfolio/buildroom/) — CSS 3D project map and read-only GitHub Actions history
 
 ## More projects
 
