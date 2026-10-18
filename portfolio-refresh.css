@@ -113,6 +113,17 @@ body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-s
 .filter-button:hover, .filter-button.is-active { color: #26322e; border-color: var(--acid); background: #d95d3910; }
 .filter-button.is-active span { color: var(--acid); }
 .project-grid { gap: 56px 5%; }
+.project-grid > .project-card { margin-top: 0 !important; }
+.project-grid > .project-rank-01 { order: 1; }
+.project-grid > .project-rank-02 { order: 2; }
+.project-grid > .project-rank-03 { order: 3; }
+.project-grid > .project-rank-04 { order: 4; }
+.project-grid > .project-rank-05 { order: 5; }
+.project-grid > .project-rank-06 { order: 6; }
+.project-grid > .project-rank-07 { order: 7; }
+.project-grid > .project-rank-08 { order: 8; }
+.project-grid > .project-rank-09 { order: 9; }
+.project-grid > .project-rank-10 { order: 10; }
 .project-card { color: var(--fg); }
 .project-card .project-visual { border-radius: 4px; transform: none; transition: box-shadow .22s, filter .22s; }
 .project-card:hover .project-visual { filter: saturate(1.04); box-shadow: 0 15px 32px #29342a18; }
