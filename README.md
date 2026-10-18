@@ -11,7 +11,7 @@ Edit `index.html` to change the name, bio, repository descriptions, timeline, an
 - [RunScope](https://github.com/damnsunnyy/RunScope) — live GitHub Actions health dashboard for release reliability, run times, and failure patterns
 - `stanford-dog-breed-recognition` — ResNet-18 image classification research
 - `TODO-APP` — React, Django REST Framework, and SQLite
-- `react-streaming-catalog` — StreamBox movie discovery and watchlist UI
+- [StreamBox Catalog](https://github.com/damnsunnyy/react-streaming-catalog) — [live demo](https://damnsunnyy.github.io/react-streaming-catalog/) with browser-persistent movie watchlist
 - `amazon-prime-video-clone` — Django streaming application
 - `google-docs-clone` — DocsFlow real-time collaborative editor
 - `resume_ats` — Java resume screening and candidate ranking
