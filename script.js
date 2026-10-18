@@ -45,6 +45,28 @@
     activeCategory = 'all';
     applyFilters();
   }));
+
+  // Let each technology tile catch the pointer with a soft, bounded 3D tilt.
+  techFilters.forEach((button) => {
+    button.addEventListener('pointermove', (event) => {
+      if (event.pointerType === 'touch' || reduceMotion) return;
+      const rect = button.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width;
+      const y = (event.clientY - rect.top) / rect.height;
+      button.style.setProperty('--pointer-x', String(Math.round(x * 100)) + '%');
+      button.style.setProperty('--pointer-y', String(Math.round(y * 100)) + '%');
+      button.style.setProperty('--tilt-x', ((x - .5) * 3).toFixed(2) + 'deg');
+      button.style.setProperty('--tilt-y', ((.5 - y) * 3).toFixed(2) + 'deg');
+    });
+    const resetPointer = () => {
+      button.style.removeProperty('--pointer-x');
+      button.style.removeProperty('--pointer-y');
+      button.style.removeProperty('--tilt-x');
+      button.style.removeProperty('--tilt-y');
+    };
+    button.addEventListener('pointerleave', resetPointer);
+    button.addEventListener('pointercancel', resetPointer);
+  });
   window.addEventListener('portfolio-filter-tech', (event) => {
     const tech = event.detail?.tech;
     if (!techFilters.some((button) => button.dataset.tech === tech)) return;
