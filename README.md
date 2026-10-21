@@ -54,7 +54,7 @@ Open the standalone [Apply Desk live app](https://damnsunnyy.github.io/ApplyDesk
 
 ## Resume
 
-The public portfolio includes [Shubham Meghani’s updated one-page resume PDF](assets/Shubham-Meghani-Resume-2026.pdf), with a matching [HTML source](assets/resume-source.html).
+The public portfolio includes [Shubham Meghani’s one-page Data Scientist I resume PDF](assets/Shubham-Meghani-Resume-2026.pdf), with a matching [HTML source](assets/resume-source.html).
 
 ## Project imagery
 

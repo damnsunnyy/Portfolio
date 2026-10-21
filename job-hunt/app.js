@@ -9,11 +9,36 @@ const STATUSES = ['interested', 'applied', 'interview', 'shortlisted', 'offer', 
 const DISPLAY_STATUS = { interested: 'Interested', applied: 'Applied', interview: 'Interview', shortlisted: 'Shortlisted', offer: 'Offer', rejected: 'Rejected', archived: 'Archived' };
 const TERM_LIBRARY = ['project coordination','project management','requirement analysis','stakeholder coordination','task tracking','documentation','quality assurance','client communication','business analysis','data analysis','python','java','javascript','typescript','sql','html','css','react','django','fastapi','rest api','aws','azure','excel','power bi','pandas','scikit-learn','machine learning','generative ai','swift','swiftui','firebase','firestore','ios','agile','scrum','jira','communication','leadership','customer support','salesforce','tableau','wordpress','node.js','mongodb','mysql','api','testing','cloud','figma','git'];
 const SHUBHAM_STARTER = {
-  target_roles: ['Project Coordinator', 'Project Associate', 'Junior Web Developer', 'Business Analyst'],
+  target_roles: ['Data Scientist I', 'Junior Data Scientist', 'Machine Learning Engineer', 'Data Analyst'],
   locations: ['Pune, India', 'Remote, India'],
-  skills: ['Project coordination', 'Requirement analysis', 'Task and deliverable tracking', 'Client communication', 'Stakeholder coordination', 'Documentation', 'Quality assurance', 'Python', 'JavaScript', 'SQL', 'React', 'Django', 'FastAPI', 'Power BI', 'Excel', 'SwiftUI', 'Firebase'],
-  summary: 'MCA candidate with practical experience in client-focused website delivery, responsive UI updates, technical documentation, and collaborative project workflows. Skilled at clarifying requirements, coordinating implementation, resolving issues, and checking deliverables.',
-  resume_facts: 'EDUCATION\nMaster of Computer Applications (MCA), MIT World Peace University, Pune — Pursuing\nBachelor of Computer Applications (BCA), LNCT College, Bhopal\n\nEXPERIENCE\nWeb Design Intern — Poho (2 months)\nDesigned and customized WordPress websites to meet client requirements and responsive layout needs. Translated website change requests into implementation tasks. Reviewed layouts across screen sizes and refined UI details.\n\nPROJECTS\nStanford Dog Breed Recognition — Python, PyTorch, ResNet-18. 66.08% top-1 accuracy and 64.92% macro F1 on the official test partition; single-run baseline. https://github.com/damnsunnyy/stanford-dog-breed-recognition\nSANA / Echo — Local-first AI assistant prototype with speech transcription, Ollama, FastAPI and React dashboard. https://github.com/damnsunnyy/Echo\nRoadTrip — In-progress SwiftUI group-riding prototype with invite codes and Firestore-backed ride data. https://github.com/damnsunnyy/RoadTrip'
+  skills: ['Python', 'SQL', 'Java', 'C++', 'Pandas', 'scikit-learn', 'PyTorch', 'NLP', 'TF-IDF', 'Regression', 'Classification', 'Power BI', 'DAX', 'Excel', 'Data Reporting', 'Git', 'AWS', 'Azure', 'MySQL', 'Microsoft SQL Server', 'REST APIs', 'WordPress', 'Responsive Web Design', 'Whisper', 'ElevenLabs', 'LLM APIs', 'ResNet-18'],
+  summary: 'MCA candidate with hands-on experience building machine learning, computer vision, and generative AI projects in Python. Experienced in structuring data workflows, comparing model performance, and documenting results. Comfortable translating requirements into implementation tasks, checking outputs, and resolving issues. Interested in applying reliable analytical methods to data-intensive problems.',
+  resume_facts: `EDUCATION
+Master of Computer Applications (MCA) — MIT World Peace University, Pune (Pursuing).
+Bachelor of Computer Applications (BCA) — LNCT College, Bhopal.
+
+EXPERIENCE
+Web Design Intern — Poho (2 months)
+• Customized WordPress websites to client requirements, implementing content, layout, and UI updates.
+• Reviewed responsive behavior across screen sizes, resolved visual issues, and coordinated timely changes with teammates.
+
+PROJECTS
+ModelBench — Reproducible Tabular ML Experiments | Python, scikit-learn
+• Built a local-first workflow to compare regression and classification models.
+• Kept preprocessing inside training pipelines to reduce data leakage and added optional cross-validation.
+• Created a Python CLI and browser-based lab with portable HTML and JSON reports.
+
+Stanford Dog Breed Recognition | Python, PyTorch, ResNet-18
+• Built a 120-class image classifier using the Stanford Dogs dataset.
+• Evaluated a saved checkpoint on the official test partition: 66.08% top-1 accuracy and 64.92% macro F1 (single-run baseline).
+• Recorded per-breed evaluation results and documented the methodology.
+
+SANA — Personalized AI Assistant | Python, Whisper, ElevenLabs, LLM APIs
+• Designed a voice-driven assistant combining Whisper speech-to-text, language-model APIs, and ElevenLabs text-to-speech.
+• Organized components into a modular workflow to support maintenance and future improvements.
+
+CERTIFICATION
+Embedded Systems Bootcamp — Robonauts India: practical exposure to embedded systems concepts and workflows.`
 };
 
 let supabase = null;
