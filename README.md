@@ -1,5 +1,7 @@
 # Shubham — personal portfolio
 
+**Live site:** [https://damnsunnyy.github.io/Portfolio/](https://damnsunnyy.github.io/Portfolio/)
+
 A responsive portfolio for Shubham, curated from the public `damnsunnyy` GitHub profile and spanning full-stack applications, applied machine learning, AI prototypes, iOS, and developer tools. The dark, animated hero presents a 3D constellation of the portfolio’s project areas, so no single repository takes the spotlight. The page also includes a selectable tech stack, a GitHub project timeline, project-strength rankings, scroll progress, and live project screenshots. Typefaces load from Google Fonts; technology logos are stored locally.
 
 ## Personalize it
