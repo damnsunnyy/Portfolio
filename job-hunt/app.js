@@ -327,7 +327,7 @@ function appCard(item) {
   const score = document.createElement('span'); score.className = 'score-chip'; score.textContent = `${item.match_score || 0}% overlap`;
   top.append(title, score); content.append(top);
   const details = document.createElement('p'); details.textContent = [item.company, item.location, item.follow_up_at ? `Follow up ${displayDate(item.follow_up_at)}` : ''].filter(Boolean).join(' · '); content.append(details);
-  if (safeUrl(item.url)) { const link = document.createElement('a'); link.href = safeUrl(item.url); link.target = '_blank'; link.rel = 'noreferrer'; link.textContent = 'Open listing ↗'; content.append(link); }
+  if (safeUrl(item.url)) { const link = document.createElement('a'); link.href = safeUrl(item.url); link.target = '_blank'; link.rel = 'noreferrer'; link.textContent = 'Open listing to apply ↗'; content.append(link); }
   const status = document.createElement('select'); status.className = 'status-select'; status.setAttribute('aria-label', `Application status for ${item.title}`);
   for (const value of STATUSES) { const option = new Option(DISPLAY_STATUS[value], value); status.add(option); }
   status.value = item.status; status.addEventListener('change', async () => { const patch = { status: status.value }; if (status.value === 'applied' && !item.applied_at) patch.applied_at = new Date().toISOString().slice(0, 10); const { error } = await supabase.from('applications').update(patch).eq('id', item.id); if (error) toast(`Could not update status: ${error.message}`); else { item.status = patch.status; item.applied_at = patch.applied_at || item.applied_at; renderStats(); toast('Application status updated.'); } });
@@ -516,11 +516,29 @@ async function applyEmailSignal(event) {
 }
 
 function tailorResume(item) {
-  const facts = String(profile.resume_facts || '').split(/\n+/).map(line => line.trim()).filter(Boolean);
-  const relevant = (profile.skills || []).filter(skill => normalize(`${item.title} ${item.description}`).includes(normalize(skill)));
-  const orderedSkills = [...relevant, ...(profile.skills || []).filter(skill => !relevant.includes(skill))];
-  const factsHtml = facts.map(line => `<p>${escapeHtml(line)}</p>`).join('');
-  const doc = `<!doctype html><html><head><meta charset="utf-8"><title>${escapeHtml(profile.full_name)} — Resume</title><style>@page{size:A4;margin:14mm 16mm}body{font:10pt/1.35 Georgia,serif;color:#171717;max-width:178mm;margin:0 auto}header{text-align:center;margin-bottom:15px}h1{font-size:20pt;letter-spacing:.04em;margin:0 0 5px}.contact{font-size:9pt}h2{font-size:11pt;border-bottom:1px solid #777;padding-bottom:3px;margin:13px 0 6px}p{margin:4px 0}section{break-inside:avoid}.skills{font-size:9pt}a{color:inherit;text-decoration:none}@media screen{body{padding:14mm;box-shadow:0 8px 35px #0002}}</style></head><body><header><h1>${escapeHtml(profile.full_name)}</h1><div class="contact">${escapeHtml(profile.location)}${profile.phone ? ` · ${escapeHtml(profile.phone)}` : ''} · ${escapeHtml(session.user.email)}${profile.linkedin_url ? `<br>${escapeHtml(profile.linkedin_url)}` : ''}${profile.portfolio_url ? ` · ${escapeHtml(profile.portfolio_url)}` : ''}</div></header><section><h2>SUMMARY</h2><p>${escapeHtml(profile.summary || '')}</p></section><section><h2>SKILLS</h2><p class="skills">${orderedSkills.map(escapeHtml).join(' · ')}</p></section><section><h2>EXPERIENCE, EDUCATION &amp; SELECTED WORK</h2>${factsHtml}</section><footer><p>Prepared for ${escapeHtml(item.title)} at ${escapeHtml(item.company)}. This document only uses facts from the account profile; verify it before sending.</p></footer><script>window.addEventListener('load',()=>setTimeout(()=>window.print(),500))<\/script></body></html>`;
+  const isOwner = (session.user.email || '').toLowerCase() === 'shubham.meghani.work@gmail.com';
+  const hasOldStarter = isOwner && String(profile.resume_facts || '').includes('Stanford Dog Breed Recognition —') && String(profile.resume_facts || '').includes('RoadTrip —');
+  // Existing account profiles remain user-editable; recognize only the untouched
+  // original starter so its resume output uses the main-resume facts supplied by Shubham.
+  const resumeProfile = hasOldStarter ? SHUBHAM_STARTER : profile;
+  const jobText = normalize(`${item.title} ${item.description}`);
+  const skills = [...new Set(resumeProfile.skills || [])];
+  const relevant = skills.filter(skill => {
+    const key = normalize(skill);
+    return key && (` ${jobText} `).includes(` ${key} `);
+  });
+  // Rank existing profile facts by the job's language while keeping every fact intact.
+  // This changes emphasis and ordering only; it never creates achievements or credentials.
+  const blocks = String(resumeProfile.resume_facts || '').split(/\n\s*\n/).map(block => block.trim()).filter(Boolean);
+  const rankedBlocks = blocks.map((block, index) => ({ block, index, score: relevant.reduce((score, skill) => score + (normalize(block).includes(normalize(skill)) ? 1 : 0), 0) }))
+    .sort((a, b) => b.score - a.score || a.index - b.index);
+  const factsHtml = rankedBlocks.map(({ block }) => `<p>${escapeHtml(block).replace(/\n/g, '<br>')}</p>`).join('');
+  const summary = cleanText(resumeProfile.summary);
+  const tailoredSummary = summary;
+  const matchedRequirements = relevant.length
+    ? `<section><h2>ROLE-ALIGNED SKILLS</h2><p class="skills">${relevant.map(escapeHtml).join(' · ')}</p></section>` : '';
+  const orderedSkills = [...relevant, ...skills.filter(skill => !relevant.includes(skill))];
+  const doc = `<!doctype html><html><head><meta charset="utf-8"><title>${escapeHtml(profile.full_name)} — ${escapeHtml(item.company)} Resume</title><style>@page{size:A4;margin:14mm 16mm}body{font:10pt/1.4 Arial,sans-serif;color:#171717;max-width:178mm;margin:0 auto}header{text-align:center;margin-bottom:15px}h1{font-size:20pt;letter-spacing:.02em;margin:0 0 5px}.target{font-size:10pt;font-weight:bold;margin:0 0 5px}.contact{font-size:9pt;color:#444}h2{font-size:10.5pt;letter-spacing:.05em;border-bottom:1px solid #777;padding-bottom:3px;margin:13px 0 6px}p{margin:4px 0;white-space:normal}section{break-inside:avoid}.skills{font-size:9pt}footer{font-size:8pt;color:#555;margin-top:14px;border-top:1px solid #ddd;padding-top:6px}@media screen{body{padding:14mm;box-shadow:0 8px 35px #0002}}</style></head><body><header><h1>${escapeHtml(profile.full_name)}</h1><p class="target">${escapeHtml(item.title)}</p><div class="contact">${escapeHtml(profile.location)}${profile.phone ? ` · ${escapeHtml(profile.phone)}` : ''} · ${escapeHtml(session.user.email)}${profile.linkedin_url ? `<br>${escapeHtml(profile.linkedin_url)}` : ''}${profile.portfolio_url ? ` · ${escapeHtml(profile.portfolio_url)}` : ''}</div></header><section><h2>PROFESSIONAL SUMMARY</h2><p>${escapeHtml(tailoredSummary)}</p></section>${matchedRequirements}<section><h2>SKILLS</h2><p class="skills">${orderedSkills.map(escapeHtml).join(' · ')}</p></section><section><h2>EXPERIENCE, EDUCATION &amp; SELECTED WORK</h2>${factsHtml}</section><footer>Tailored for ${escapeHtml(item.title)} at ${escapeHtml(item.company)}. All experience and skill claims come from your saved profile. Review the document before sending.</footer><script>window.addEventListener('load',()=>setTimeout(()=>window.print(),500))<\/script></body></html>`;
   const anchor = document.createElement('a'); anchor.href = URL.createObjectURL(new Blob([doc], { type: 'text/html' })); anchor.download = `${profile.full_name.replace(/[^a-z0-9]+/gi, '-')}-${item.company.replace(/[^a-z0-9]+/gi, '-')}-resume.html`; anchor.click(); setTimeout(() => URL.revokeObjectURL(anchor.href), 1500);
 }
 
@@ -541,8 +559,26 @@ function consumeEmail() {
 
 function openPendingCapture() {
   if (!pendingCapture) return;
-  const form = byId('application-form'); form.elements.title.value = pendingCapture.title || ''; form.elements.url.value = safeUrl(pendingCapture.url); form.elements.description.value = pendingCapture.text || '';
-  byId('application-dialog').showModal(); pendingCapture = null;
+  const capture = pendingCapture; pendingCapture = null;
+  const title = cleanText(capture.title).slice(0, 180);
+  const company = cleanText(capture.company).slice(0, 140);
+  const url = safeUrl(capture.url);
+  if (title && company && url) {
+    (async () => {
+      const { data: existing, error: lookupError } = await supabase.from('applications').select('id').eq('url', url).limit(1).maybeSingle();
+      if (lookupError) { toast(`Could not check for an existing listing: ${lookupError.message}`); return; }
+      if (existing) { toast('This job is already saved with its listing link.'); return; }
+      const match = matchJob({ title, description: capture.text || '' });
+      const { error } = await supabase.from('applications').insert({ user_id: session.user.id, title, company, location: cleanText(capture.location).slice(0, 120), url, description: String(capture.text || '').slice(0, 15000), match_score: match.score, matched_terms: match.matched, missing_terms: match.missing, status: 'interested' });
+      if (error) { toast(`Could not save captured job: ${error.message}`); return; }
+      await loadApplications();
+      toast('Job and listing link saved. Open it from Applications when you’re ready to apply.');
+    })();
+    return;
+  }
+  const form = byId('application-form'); form.reset(); form.elements.title.value = title; form.elements.company.value = company; form.elements.location.value = cleanText(capture.location); form.elements.url.value = url; form.elements.description.value = capture.text || '';
+  setMessage('application-message', 'Listing link captured automatically. Add or confirm the role and company to save it.');
+  byId('application-dialog').showModal();
 }
 
 consumeCapture();
