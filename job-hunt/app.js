@@ -11,7 +11,7 @@ const TERM_LIBRARY = ['project coordination','project management','requirement a
 const SHUBHAM_STARTER = {
   target_roles: ['Data Scientist I', 'Junior Data Scientist', 'Machine Learning Engineer', 'Data Analyst'],
   locations: ['Pune, India', 'Remote, India'],
-  skills: ['Python', 'SQL', 'Java', 'C++', 'Pandas', 'scikit-learn', 'PyTorch', 'NLP', 'TF-IDF', 'Regression', 'Classification', 'Power BI', 'DAX', 'Excel', 'Data Reporting', 'Git', 'AWS', 'Azure', 'MySQL', 'Microsoft SQL Server', 'REST APIs', 'WordPress', 'Responsive Web Design', 'Whisper', 'ElevenLabs', 'LLM APIs', 'ResNet-18'],
+  skills: ['Python', 'SQL', 'Java', 'C++', 'Pandas', 'scikit-learn', 'PyTorch', 'NLP', 'TF-IDF', 'Regression', 'Classification', 'Power BI', 'DAX', 'Excel', 'Data Reporting', 'Git', 'AWS', 'Azure', 'MySQL', 'Microsoft SQL Server', 'REST APIs', 'WordPress', 'Responsive Web Design', 'Whisper', 'ElevenLabs', 'LLM APIs', 'EfficientNet-B0'],
   summary: 'MCA candidate with hands-on experience building machine learning, computer vision, and generative AI projects in Python. Experienced in structuring data workflows, comparing model performance, and documenting results. Comfortable translating requirements into implementation tasks, checking outputs, and resolving issues. Interested in applying reliable analytical methods to data-intensive problems.',
   resume_facts: `EDUCATION
 Master of Computer Applications (MCA) — MIT World Peace University, Pune (Pursuing).
@@ -28,10 +28,10 @@ ModelBench — Reproducible Tabular ML Experiments | Python, scikit-learn
 • Kept preprocessing inside training pipelines to reduce data leakage and added optional cross-validation.
 • Created a Python CLI and browser-based lab with portable HTML and JSON reports.
 
-Stanford Dog Breed Recognition | Python, PyTorch, ResNet-18
+Stanford Dog Breed Recognition | Python, PyTorch, EfficientNet-B0
 • Built a 120-class image classifier using the Stanford Dogs dataset.
-• Evaluated a saved checkpoint on the official test partition: 66.08% top-1 accuracy and 64.92% macro F1 (single-run baseline).
-• Recorded per-breed evaluation results and documented the methodology.
+• Evaluated a saved checkpoint on the official test partition: 82.26% top-1 accuracy, 82.11% macro precision, 81.84% macro recall, and 81.22% macro F1 on the official test split (single seed).
+• Saved per-breed metrics, a confusion matrix, and the checkpoint; documented the protocol and results.
 
 SANA — Personalized AI Assistant | Python, Whisper, ElevenLabs, LLM APIs
 • Designed a voice-driven assistant combining Whisper speech-to-text, language-model APIs, and ElevenLabs text-to-speech.
