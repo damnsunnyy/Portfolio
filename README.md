@@ -16,7 +16,7 @@ Ten selected projects are grouped by system scope, technical integration, comple
 
 - [ModelBench](https://github.com/damnsunnyy/ModelBench) — leakage-safe local-first tabular ML experiments, cross-validation, and portable reports
 - [Apply Desk](https://github.com/damnsunnyy/ApplyDesk) — role discovery, resume preparation, and application tracking with account-scoped records
-- [Stanford Dog Breed Recognition](https://github.com/damnsunnyy/stanford-dog-breed-recognition) — 120-class ResNet-18 study with saved checkpoint and held-out metrics
+- [Stanford Dog Breed Recognition](https://github.com/damnsunnyy/stanford-dog-breed-recognition) — 120-class EfficientNet-B0 study with a saved checkpoint; 82.26% top-1 accuracy and 81.22% macro F1 on the official held-out test split
 - [SANA / Echo](https://github.com/damnsunnyy/Echo) — local voice-assistant prototype joining speech recognition, Ollama, FastAPI, and React/Electron
 
 ### Tier 2 — broad systems and specialist builds
